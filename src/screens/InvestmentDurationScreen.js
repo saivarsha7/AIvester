@@ -40,11 +40,12 @@ const InvestmentDurationScreen = ({ navigation }) => {
 
       {/* Continue Button */}
       <TouchableOpacity
-        style={styles.continueButton}
-        onPress={() => navigation.navigate("NextScreen")}
-      >
-        <Text style={styles.continueText}>Continue →</Text>
-      </TouchableOpacity>
+  style={styles.continueButton}
+  onPress={() => navigation.navigate("InvestmentRisk")}
+>
+  <Text style={styles.continueText}>Continue →</Text>
+</TouchableOpacity>
+
     </View>
   );
 };

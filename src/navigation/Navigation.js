@@ -21,6 +21,18 @@ import InvestmentSelectionScreen from "../screens/InvestmentSelectionScreen";
 import RetirementPlanningScreen from "../screens/RetirementPlanningScreen";
 import SavingsTrackingScreen from "../screens/SavingsTrackingScreen";
 import InvestmentDurationScreen from "../screens/InvestmentDurationScreen";
+import InvestmentRiskScreen from "../screens/InvestmentRiskScreen"; // Import the new screen
+import IndustrySelectionScreen from "../screens/IndustrySelectionScreen";
+import DebtLevelScreen from '../screens/DebtLevelScreen';
+import PortfolioProjectionScreen from '../screens/PortfolioProjectionScreen';
+import PortfolioCompletionScreen from '../screens/PortfolioCompletionScreen';
+import PortfolioDashboardScreen from '../screens/PortfolioDashboardScreen'; 
+import InvestmentInsightsScreen from '../screens/InvestmentInsightsScreen';
+import EditPortfolioScreen from '../screens/EditPortfolioScreen';
+import AddNewPortfolioScreen from "../screens/AddNewPortfolioScreen";
+import PortfolioCreatedScreen from "../screens/PortfolioCreatedScreen";
+import AddInvestmentToRetirementScreen from "../screens/AddInvestmentToRetirementScreen";
+import StockSelectionScreen from "../screens/StockSelectionScreen"; 
 
 const Stack = createStackNavigator();
 
@@ -48,7 +60,19 @@ export default function Navigation() {
         <Stack.Screen name="RetirementPlanning" component={RetirementPlanningScreen} options={{ headerShown: false }} />
         <Stack.Screen name="SavingsTracking" component={SavingsTrackingScreen} options={{ headerShown: false }} />
         <Stack.Screen name="InvestmentDuration" component={InvestmentDurationScreen} />
-
+        <Stack.Screen name="InvestmentRisk" component={InvestmentRiskScreen} />
+        <Stack.Screen name="IndustrySelection" component={IndustrySelectionScreen} />
+        <Stack.Screen name="DebtLevel" component={DebtLevelScreen} />
+        <Stack.Screen name="PortfolioProjection" component={PortfolioProjectionScreen} />
+        <Stack.Screen name="PortfolioCompletion" component={PortfolioCompletionScreen} />
+        <Stack.Screen name="PortfolioDashboard" component={PortfolioDashboardScreen} />
+        <Stack.Screen name="InvestmentInsights" component={InvestmentInsightsScreen} />
+        <Stack.Screen name="EditPortfolioScreen" component={EditPortfolioScreen} />
+        <Stack.Screen name="AddNewPortfolio" component={AddNewPortfolioScreen} />
+        <Stack.Screen name="PortfolioCreated" component={PortfolioCreatedScreen} />
+        <Stack.Screen name="AddInvestmentToRetirement" component={AddInvestmentToRetirementScreen} />
+        <Stack.Screen name="StockSelection" component={StockSelectionScreen} />
+        
       </Stack.Navigator>
       
     </NavigationContainer>
