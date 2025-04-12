@@ -34,7 +34,8 @@ const WelcomeScreen = ({navigation}) => {
       </View>
 
       {/* Get Started Button */}
-      <TouchableOpacity style={styles.getStartedButton} onPress={()=>NavigationPreloadManager.navigate("Onboarding")}>
+      <TouchableOpacity style={styles.getStartedButton} onPress={() => navigation.navigate("Onboarding")}>
+
         <Text style={styles.getStartedText}>Get Started →</Text>
       </TouchableOpacity>
 

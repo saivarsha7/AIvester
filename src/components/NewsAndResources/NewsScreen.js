@@ -1,0 +1,183 @@
+
+import React from "react";
+import { View, Text, TextInput, ScrollView, Image, TouchableOpacity, StyleSheet } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { Ionicons, MaterialIcons } from "@expo/vector-icons";
+import AdditionalContent from "./AdditionalContent";
+import Workshops from "./Workshops"
+import Events from "./Events"
+
+const NewsScreen = () => {
+  const navigation = useNavigation();
+  return (
+    <ScrollView style={{ flex: 1, backgroundColor: "#1E1E1E", padding: 20 }}>
+      <View style={styles.container}>
+        {/* Header Section */}
+        <View style={styles.header}>
+          <MaterialIcons name="menu-book" size={32} color="white" />
+          <Text style={styles.headerText}>Investing Resources, Made Only For You.</Text>
+          <Text style={styles.subHeaderText}>Explore 3,295 resources from us.</Text>
+        </View>
+
+        {/* Search Bar */}
+        <View style={styles.searchContainer}>
+          <Ionicons name="search" size={20} color="white" style={styles.searchIcon} />
+          <TextInput placeholder="Search for a resource..." placeholderTextColor="#A0A0A0" style={styles.searchInput} />
+        </View>
+
+        {/* Categories */}
+        <View style={styles.categoryHeader}>
+          <Text style={styles.sectionTitle}>Browse Category</Text>
+          <TouchableOpacity>
+            <Text style={styles.seeAll}>See All</Text>
+          </TouchableOpacity>
+        </View>
+
+        <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.categories}>
+          {[ 
+            { name: "Investing", icon: "business" },
+            { name: "ETFs", icon: "trending-up" },
+            { name: "Credit", icon: "credit-card" },
+            { name: "Saving", icon: "savings" },
+            { name: "Stocks", icon: "show-chart" },
+          ].map((item, index) => (
+            <View key={index} style={styles.categoryItem}>
+              <MaterialIcons name={item.icon} size={24} color="white" />
+              <Text style={styles.categoryText}>{item.name}</Text>
+            </View>
+          ))}
+        </ScrollView>
+
+        {/* Featured Article */}
+        <View style={styles.sectionHeader}>
+          <Text style={styles.sectionTitle}>Featured Article</Text>
+          <TouchableOpacity onPress={() => navigation.navigate("ArticleScreen")}>
+            <Text style={styles.seeAll}>See All</Text>
+          </TouchableOpacity>
+        </View>
+        
+        <View style={styles.articleCard}>
+          <Image source={require("../../../assets/financial-freedom.jpeg")} style={styles.articleImage} />
+          <Text style={styles.articleTag}>Long-Term Investing • Inflation</Text>
+          <Text style={styles.articleTitle}>How to Fight Inflation with Long-Term Investing with RoboAdvisor</Text>
+          <View style={styles.authorContainer}>
+            <Ionicons name="person-circle" size={18} color="white" />
+            <Text style={styles.authorText}>Alisha Yee</Text>
+          </View>
+        </View>
+        <AdditionalContent />
+        <Workshops/>
+        <Events/>
+      </View>
+    </ScrollView>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#1E1E1E",
+    padding: 20,
+  },
+  header: {
+    alignItems: "center",
+    marginBottom: 20,
+  },
+  headerText: {
+    color: "white",
+    fontSize: 20,
+    fontWeight: "bold",
+    marginTop: 10,
+    textAlign: "center",
+  },
+  subHeaderText: {
+    color: "#A0A0A0",
+    fontSize: 14,
+    marginTop: 5,
+    textAlign: "center",
+  },
+  searchContainer: {
+    flexDirection: "row",
+    backgroundColor: "#2C2C2C",
+    padding: 12,
+    borderRadius: 10,
+    alignItems: "center",
+    marginBottom: 20,
+  },
+  searchIcon: {
+    marginRight: 10,
+  },
+  searchInput: {
+    flex: 1,
+    color: "white",
+  },
+  categoryHeader: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: 10,
+  },
+  sectionHeader: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: 10,
+  },
+  sectionTitle: {
+    color: "white",
+    fontSize: 16,
+    fontWeight: "bold",
+  },
+  seeAll: {
+    color: "#F5A623",
+    fontSize: 14,
+  },
+  categories: {
+    flexDirection: "row",
+    marginBottom: 20,
+  },
+  categoryItem: {
+    backgroundColor: "#2C2C2C",
+    padding: 15,
+    borderRadius: 10,
+    marginRight: 10,
+    alignItems: "center",
+  },
+  categoryText: {
+    color: "white",
+    marginTop: 5,
+    fontSize: 12,
+  },
+  articleCard: {
+    backgroundColor: "#2C2C2C",
+    padding: 15,
+    borderRadius: 10,
+  },
+  articleImage: {
+    width: "100%",
+    height: 150,
+    borderRadius: 10,
+    marginBottom: 10,
+  },
+  articleTag: {
+    color: "#A0A0A0",
+    fontSize: 12,
+  },
+  articleTitle: {
+    color: "white",
+    fontSize: 16,
+    fontWeight: "bold",
+    marginBottom: 10,
+  },
+  authorContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  authorText: {
+    color: "white",
+    marginLeft: 5,
+    fontSize: 14,
+  },
+});
+
+export default NewsScreen;

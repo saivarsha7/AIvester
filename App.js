@@ -1,36 +1,19 @@
-// import WelcomeScreen from './src/components/WelcomeScreen/WelcomeScreen';
-// import { Button, StyleSheet, Text, View } from 'react-native';
+// import React from "react";
+// import Navigation from "./src/navigation/Navigation";
 
 // export default function App() {
-//   return (
-//     <View>
-//       <WelcomeScreen />
-//     </View>
-//   );
+//   return <Navigation />;
 // }
-import React from "react";
-import { View, StyleSheet } from "react-native";
-import WelcomeScreen from "./src/components/WelcomeScreen/WelcomeScreen";
+
+import * as React from 'react';
+import { Provider as PaperProvider } from 'react-native-paper';
+import Navigation from './src/navigation/Navigation'; // adjust as per your structure
 
 export default function App() {
   return (
-    <View style={{ flex: 1 }}>
-      <WelcomeScreen />
-    </View>
+    <PaperProvider>
+      <Navigation />
+    </PaperProvider>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,  // Makes sure the view takes up the full screen
-  },
-});
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// });
