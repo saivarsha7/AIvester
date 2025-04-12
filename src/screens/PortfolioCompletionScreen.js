@@ -22,7 +22,11 @@ const PortfolioCompletionScreen = ({ navigation }) => {
 
             <TouchableOpacity 
     style={styles.button} 
+<<<<<<< HEAD
     onPress={() => navigation.navigate('HomesAndActivities')} // Navigate to Dashboard
+=======
+    onPress={() => navigation.navigate('PortfolioDashboard')} // Navigate to Dashboard
+>>>>>>> e6530eae2b707fbb7e7621e081908c62cdf311a0
 >
     <Text style={styles.buttonText}>Start Investing →</Text>
 </TouchableOpacity>

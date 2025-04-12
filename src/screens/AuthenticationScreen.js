@@ -1,8 +1,13 @@
 import React, { useState } from "react";
+<<<<<<< HEAD
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import Checkbox from "expo-checkbox";
 
+=======
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image, CheckBox } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
+>>>>>>> e6530eae2b707fbb7e7621e081908c62cdf311a0
 
 const AuthenticationScreen = ({ navigation }) => {
   const [email, setEmail] = useState("");
@@ -12,7 +17,14 @@ const AuthenticationScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       {/* Logo */}
+<<<<<<< HEAD
       <Image source={require("../../assets/logo.png")} style={styles.logo} />
+=======
+      <Image 
+  source={{ uri: "https://png.pngtree.com/png-clipart/20230423/original/pngtree-modern-finance-investment-logo-png-image_9077777.png" }} 
+  style={{ width: 100, height: 100 }} 
+/>
+>>>>>>> e6530eae2b707fbb7e7621e081908c62cdf311a0
 
       {/* Title */}
       <Text style={styles.heading}>Sign In to Alvestor</Text>
@@ -46,7 +58,11 @@ const AuthenticationScreen = ({ navigation }) => {
 
       {/* Remember Me Checkbox */}
       <View style={styles.checkboxContainer}>
+<<<<<<< HEAD
         <Checkbox
+=======
+        <CheckBox
+>>>>>>> e6530eae2b707fbb7e7621e081908c62cdf311a0
           value={rememberMe}
           onValueChange={setRememberMe}
           tintColors={{ true: "orange", false: "#888" }}
@@ -55,6 +71,7 @@ const AuthenticationScreen = ({ navigation }) => {
       </View>
 
       {/* Sign In Button */}
+<<<<<<< HEAD
       <TouchableOpacity style={styles.signInButton} onPress={() => navigation.navigate("NameScreen")}>
         <Text style={styles.buttonText}>Sign In</Text>
       </TouchableOpacity>
@@ -63,6 +80,20 @@ const AuthenticationScreen = ({ navigation }) => {
       <TouchableOpacity style={styles.createAccountButton}>
         <Text style={styles.createAccountText}>Create New Account</Text>
       </TouchableOpacity>
+=======
+      <TouchableOpacity style={styles.signInButton}>
+        <Text style={styles.buttonText}>Sign In</Text>
+      </TouchableOpacity>
+
+     {/* Create Account Button */}
+<TouchableOpacity 
+  style={styles.createAccountButton} 
+  onPress={() => navigation.navigate("ProfileSetup")}
+>
+  <Text style={styles.createAccountText}>Create New Account</Text>
+</TouchableOpacity>
+
+>>>>>>> e6530eae2b707fbb7e7621e081908c62cdf311a0
 
       {/* Forgot Password Link */}
       <TouchableOpacity onPress={() => navigation.navigate("ForgotPassword")}>

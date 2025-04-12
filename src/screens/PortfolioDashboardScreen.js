@@ -1,10 +1,18 @@
 import React, { useState } from 'react';
+<<<<<<< HEAD
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
+=======
+import { View, Text, StyleSheet, TouchableOpacity, Image, ScrollView } from 'react-native';
+>>>>>>> e6530eae2b707fbb7e7621e081908c62cdf311a0
 import { LineChart } from 'react-native-chart-kit';
 import { Ionicons, FontAwesome5 } from '@expo/vector-icons';
 
 const PortfolioDashboardScreen = ({ navigation }) => {
+<<<<<<< HEAD
     const [selectedTimeRange, setSelectedTimeRange] = useState('1M');
+=======
+    const [selectedTimeRange, setSelectedTimeRange] = useState('1M'); // Default time filter
+>>>>>>> e6530eae2b707fbb7e7621e081908c62cdf311a0
 
     return (
         <View style={styles.container}>
@@ -12,7 +20,11 @@ const PortfolioDashboardScreen = ({ navigation }) => {
                 {/* Portfolio Value & Performance */}
                 <View style={styles.portfolioHeader}>
                     <Text style={styles.portfolioValue}>$385,115.02</Text>
+<<<<<<< HEAD
                     <Text style={[styles.portfolioChange, { color: '#e74c3c' }]}>-2.05%</Text>
+=======
+                    <Text style={[styles.portfolioChange, { color: '#e74c3c' }]}>-2.05%</Text> 
+>>>>>>> e6530eae2b707fbb7e7621e081908c62cdf311a0
                 </View>
 
                 {/* Portfolio Performance Graph */}
@@ -29,13 +41,24 @@ const PortfolioDashboardScreen = ({ navigation }) => {
                             backgroundGradientFrom: '#f5f0e1',
                             backgroundGradientTo: '#f5f0e1',
                             decimalPlaces: 2,
+<<<<<<< HEAD
                             color: (opacity = 1) => `rgba(231, 76, 60, ${opacity})`,
+=======
+                            color: (opacity = 1) => `rgba(231, 76, 60, ${opacity})`, // Red graph line
+>>>>>>> e6530eae2b707fbb7e7621e081908c62cdf311a0
                             labelColor: (opacity = 1) => `rgba(44, 62, 80, ${opacity})`
                         }}
                         bezier
                     />
+<<<<<<< HEAD
                     <View style={styles.filters}>
                         {['1D', '1W', '1M', '3M', '1Y', 'All'].map(range => (
+=======
+                    
+                    {/* Time Range Filters */}
+                    <View style={styles.filters}>
+                        {['1D', '1W', '1M', '3M', '1Y', 'All'].map((range) => (
+>>>>>>> e6530eae2b707fbb7e7621e081908c62cdf311a0
                             <TouchableOpacity
                                 key={range}
                                 style={[styles.filterButton, selectedTimeRange === range && styles.activeFilter]}
@@ -49,7 +72,11 @@ const PortfolioDashboardScreen = ({ navigation }) => {
                     </View>
                 </View>
 
+<<<<<<< HEAD
                 {/* Quick Actions */}
+=======
+                {/* Quick Action Buttons */}
+>>>>>>> e6530eae2b707fbb7e7621e081908c62cdf311a0
                 <View style={styles.actionsContainer}>
                     <TouchableOpacity style={styles.actionButton}>
                         <Ionicons name="add-circle" size={24} color="#e67e22" />
@@ -92,6 +119,7 @@ const PortfolioDashboardScreen = ({ navigation }) => {
                     </View>
                 </View>
 
+<<<<<<< HEAD
                 {/* Insights */}
                 <View style={styles.section}>
                     <Text style={styles.insightText}>You haven’t made any stock investments in Trade</Text>
@@ -104,6 +132,21 @@ const PortfolioDashboardScreen = ({ navigation }) => {
                 </View>
 
                 {/* Portfolios */}
+=======
+                {/* Portfolio Insights */}
+                <View style={styles.section}>
+                    <Text style={styles.insightText}>You haven’t made any stock investments in Trade</Text>
+                    <TouchableOpacity 
+    style={styles.insightButton} 
+    onPress={() => navigation.navigate('InvestmentInsights')} // Navigate to Investment Insights
+>
+    <Text style={styles.insightButtonText}>See All Insights →</Text>
+</TouchableOpacity>
+
+                </View>
+
+                {/* Portfolio Categories */}
+>>>>>>> e6530eae2b707fbb7e7621e081908c62cdf311a0
                 <View style={styles.section}>
                     <Text style={styles.sectionTitle}>Your Portfolios</Text>
                     {[
@@ -112,7 +155,11 @@ const PortfolioDashboardScreen = ({ navigation }) => {
                         { title: 'Trips & Ticks', value: '$15,200', change: '+$900 (+6.3%)', icon: 'plane', color: '#3498db' }
                     ].map((item, index) => (
                         <View key={index} style={styles.portfolioCard}>
+<<<<<<< HEAD
                             <FontAwesome5 name={item.icon} size={24} color={item.color} style={{ marginRight: 12 }} />
+=======
+                            <FontAwesome5 name={item.icon} size={24} color={item.color} />
+>>>>>>> e6530eae2b707fbb7e7621e081908c62cdf311a0
                             <View>
                                 <Text style={styles.portfolioTitle}>{item.title}</Text>
                                 <Text style={styles.portfolioValue}>{item.value}</Text>
@@ -121,6 +168,7 @@ const PortfolioDashboardScreen = ({ navigation }) => {
                         </View>
                     ))}
                 </View>
+<<<<<<< HEAD
 
                 {/* Edit Portfolio Button */}
                 <View style={{ alignItems: 'center', marginVertical: 20 }}>
@@ -131,6 +179,8 @@ const PortfolioDashboardScreen = ({ navigation }) => {
                         <Text style={styles.editButtonText}>Edit Portfolio</Text>
                     </TouchableOpacity>
                 </View>
+=======
+>>>>>>> e6530eae2b707fbb7e7621e081908c62cdf311a0
             </ScrollView>
         </View>
     );
@@ -147,7 +197,10 @@ const styles = StyleSheet.create({
     filters: { flexDirection: 'row', justifyContent: 'center', marginVertical: 10 },
     filterButton: { padding: 8, marginHorizontal: 5 },
     activeFilter: { borderBottomWidth: 2, borderBottomColor: '#e67e22' },
+<<<<<<< HEAD
     filterText: { fontSize: 14, color: '#7f8c8d' },
+=======
+>>>>>>> e6530eae2b707fbb7e7621e081908c62cdf311a0
     activeFilterText: { fontWeight: 'bold', color: '#e67e22' },
     actionsContainer: { flexDirection: 'row', justifyContent: 'space-evenly', marginVertical: 20 },
     actionButton: { alignItems: 'center' },
@@ -155,6 +208,7 @@ const styles = StyleSheet.create({
     section: { paddingHorizontal: 20, marginBottom: 20 },
     sectionTitle: { fontSize: 18, fontWeight: 'bold', marginBottom: 10 },
     insightText: { textAlign: 'center', color: '#7f8c8d' },
+<<<<<<< HEAD
     insightButton: { marginTop: 8, alignSelf: 'center' },
     insightButtonText: { color: '#e67e22', fontWeight: 'bold' },
     assetContainer: { flexDirection: 'row', justifyContent: 'space-between', flexWrap: 'wrap' },
@@ -174,4 +228,9 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 16
     }
+=======
+    insightCTA: { color: '#e67e22', textAlign: 'center', marginTop: 5 },
+    portfolioCard: { flexDirection: 'row', alignItems: 'center', backgroundColor: '#fff', padding: 15, borderRadius: 10, marginBottom: 10 },
+    portfolioTitle: { fontSize: 16, fontWeight: 'bold' }
+>>>>>>> e6530eae2b707fbb7e7621e081908c62cdf311a0
 });

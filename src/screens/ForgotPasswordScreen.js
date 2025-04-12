@@ -7,8 +7,16 @@ const ForgotPasswordScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
+<<<<<<< HEAD
       {/* Logo */}
       <Image source={require("../../assets/logo.png")} style={styles.logo} />
+=======
+      <Image 
+  source={{ uri: "https://png.pngtree.com/png-clipart/20230423/original/pngtree-modern-finance-investment-logo-png-image_9077777.png" }} 
+  style={{ width: 100, height: 100 }} 
+/>
+
+>>>>>>> e6530eae2b707fbb7e7621e081908c62cdf311a0
 
       {/* Title */}
       <Text style={styles.heading}>Forgot Password</Text>
@@ -33,14 +41,23 @@ const ForgotPasswordScreen = ({ navigation }) => {
       </View>
 
       {/* Send Instructions Button */}
+<<<<<<< HEAD
       <TouchableOpacity style={styles.sendButton} onPress={() => navigation.navigate("PasswordResetSentScreen")}>
         <Text style={styles.buttonText}>Continue</Text>
+=======
+      <TouchableOpacity style={styles.sendButton}>
+        <Text style={styles.buttonText}>Send Instructions</Text>
+>>>>>>> e6530eae2b707fbb7e7621e081908c62cdf311a0
       </TouchableOpacity>
 
       {/* Back to Sign In Link */}
       <TouchableOpacity onPress={() => navigation.goBack()}>
+<<<<<<< HEAD
         
         <Text style={styles.backText}>Remember? ← Go Back to Sign In</Text>
+=======
+        <Text style={styles.backText}>← Back to Sign In</Text>
+>>>>>>> e6530eae2b707fbb7e7621e081908c62cdf311a0
       </TouchableOpacity>
     </View>
   );

@@ -29,7 +29,11 @@ const PortfolioCreatedScreen = ({ navigation }) => {
             {/* Adjust Investment Button */}
             <TouchableOpacity 
                 style={styles.adjustButton} 
+<<<<<<< HEAD
                 onPress={() => navigation.navigate("EditPortfolio")}
+=======
+                onPress={() => navigation.navigate("EditPortfolioScreen")}
+>>>>>>> e6530eae2b707fbb7e7621e081908c62cdf311a0
             >
                 <Text style={styles.buttonText}>Adjust Investment</Text>
             </TouchableOpacity>

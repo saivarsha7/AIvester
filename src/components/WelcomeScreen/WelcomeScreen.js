@@ -1,12 +1,17 @@
 import React from "react";
-import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
+import { View, Text, Image, TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import styles from "./WelcomeScreenStyles";
-const WelcomeScreen = ({navigation}) => {
+console.log("WelcomeScreen Loaded!");
+
+const WelcomeScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       {/* Logo */}
-      <Image source={require("../../../assets/logo.png")} style={styles.logo} />
+      <Image
+        source={{ uri: "https://png.pngtree.com/png-clipart/20230326/original/pngtree-chip-ai-human-intelligence-technology-chip-high-tech-circuit-board-ai-png-image_9004996.png" }} // Use a valid online image
+        style={styles.logo}
+      />
 
       {/* Heading */}
       <Text style={styles.welcomeText}>Welcome To Alvestor!</Text>
@@ -34,8 +39,15 @@ const WelcomeScreen = ({navigation}) => {
       </View>
 
       {/* Get Started Button */}
+<<<<<<< HEAD
       <TouchableOpacity style={styles.getStartedButton} onPress={() => navigation.navigate("Onboarding")}>
 
+=======
+      <TouchableOpacity
+        style={styles.getStartedButton}
+        onPress={() => navigation?.navigate("Onboarding")}
+      >
+>>>>>>> e6530eae2b707fbb7e7621e081908c62cdf311a0
         <Text style={styles.getStartedText}>Get Started →</Text>
       </TouchableOpacity>
 

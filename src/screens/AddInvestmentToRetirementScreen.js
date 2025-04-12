@@ -2,11 +2,19 @@ import React, { useState } from "react";
 import {
     View,
     Text,
+<<<<<<< HEAD
     FlatList,
     TouchableOpacity,
     StyleSheet
 } from "react-native";
 import { FontAwesome5 } from "@expo/vector-icons";
+=======
+    ScrollView,
+    TouchableOpacity,
+    StyleSheet
+} from "react-native";
+import { Ionicons, FontAwesome5 } from "@expo/vector-icons";
+>>>>>>> e6530eae2b707fbb7e7621e081908c62cdf311a0
 
 const AddInvestmentToRetirementScreen = ({ navigation }) => {
     const [selectedInvestment, setSelectedInvestment] = useState(null);
@@ -18,6 +26,7 @@ const AddInvestmentToRetirementScreen = ({ navigation }) => {
         { id: "other", icon: "ellipsis-h", title: "Other", description: "Alternative investments like REITs, commodities, and more." },
     ];
 
+<<<<<<< HEAD
     const renderItem = ({ item }) => (
         <TouchableOpacity
             style={[
@@ -63,11 +72,59 @@ const AddInvestmentToRetirementScreen = ({ navigation }) => {
             )}
             contentContainerStyle={styles.container}
         />
+=======
+    return (
+        <ScrollView style={styles.container}>
+            {/* Header Section */}
+            <View style={styles.header}>
+                <FontAwesome5 name="chart-pie" size={40} color="#ff8c00" />
+                <Text style={styles.title}>Add New Investment to Retirement</Text>
+                <Text style={styles.subtitle}>Please choose what investment type to add.</Text>
+            </View>
+
+            {/* Investment Options Section */}
+            {investmentOptions.map((item) => (
+                <TouchableOpacity
+                    key={item.id}
+                    style={[
+                        styles.card,
+                        selectedInvestment === item.id && styles.selectedCard
+                    ]}
+                    onPress={() => setSelectedInvestment(item.id)}
+                >
+                    <FontAwesome5 name={item.icon} size={24} color="#333" style={styles.icon} />
+                    <View style={styles.cardTextContainer}>
+                        <Text style={styles.cardTitle}>{item.title}</Text>
+                        <Text style={styles.cardDescription}>{item.description}</Text>
+                    </View>
+                    <View style={[
+                        styles.radioButton,
+                        selectedInvestment === item.id && styles.selectedRadio
+                    ]} />
+                </TouchableOpacity>
+            ))}
+
+            {/* Footer Section */}
+            <TouchableOpacity
+                style={styles.proceedButton}
+                onPress={() => navigation.navigate("StockSelection")}
+            >
+                <Text style={styles.proceedButtonText}>Set & Proceed</Text>
+            </TouchableOpacity>
+
+            {/* Drag Handle for Scrollability */}
+            <View style={styles.dragHandle} />
+        </ScrollView>
+>>>>>>> e6530eae2b707fbb7e7621e081908c62cdf311a0
     );
 };
 
 const styles = StyleSheet.create({
+<<<<<<< HEAD
     container: { backgroundColor: "#f5f1e8", padding: 20 },
+=======
+    container: { flex: 1, backgroundColor: "#f5f1e8", padding: 20 },
+>>>>>>> e6530eae2b707fbb7e7621e081908c62cdf311a0
     header: { alignItems: "center", marginBottom: 20 },
     title: { fontSize: 22, fontWeight: "bold", textAlign: "center", marginTop: 10 },
     subtitle: { fontSize: 14, color: "#666", textAlign: "center", marginTop: 5 },
@@ -95,6 +152,7 @@ const styles = StyleSheet.create({
     },
     selectedRadio: { borderColor: "#ff8c00", backgroundColor: "#ff8c00" },
 
+<<<<<<< HEAD
     proceedButton: {
         backgroundColor: "#ff8c00",
         padding: 15,
@@ -112,6 +170,12 @@ const styles = StyleSheet.create({
         alignSelf: "center",
         marginTop: 10
     }
+=======
+    proceedButton: { backgroundColor: "#ff8c00", padding: 15, borderRadius: 10, alignItems: "center", marginTop: 20 },
+    proceedButtonText: { fontSize: 18, fontWeight: "bold", color: "#fff" },
+
+    dragHandle: { width: 50, height: 5, backgroundColor: "#ccc", borderRadius: 3, alignSelf: "center", marginTop: 10 }
+>>>>>>> e6530eae2b707fbb7e7621e081908c62cdf311a0
 });
 
 export default AddInvestmentToRetirementScreen;

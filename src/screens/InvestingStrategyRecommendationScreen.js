@@ -149,4 +149,8 @@ const styles = StyleSheet.create({
   },
 });
 
+<<<<<<< HEAD
 export default InvestingStrategyRecommendationScreen;
+=======
+export default InvestingStrategyRecommendationScreen;
+>>>>>>> e6530eae2b707fbb7e7621e081908c62cdf311a0

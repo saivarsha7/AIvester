@@ -7,8 +7,12 @@ import {
   StyleSheet,
   Alert,
 } from "react-native";
+<<<<<<< HEAD
 import * as ImagePicker from 'expo-image-picker';
 
+=======
+import * as ImagePicker from "expo-image-picker";
+>>>>>>> e6530eae2b707fbb7e7621e081908c62cdf311a0
 
 const ProfileAvatarSetup = ({ navigation }) => {
   const [image, setImage] = useState(null);
