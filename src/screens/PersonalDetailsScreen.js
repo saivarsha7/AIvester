@@ -11,12 +11,6 @@ import {
 } from "react-native";
 import { Picker } from "@react-native-picker/picker";
 import { Ionicons } from "@expo/vector-icons";
-<<<<<<< HEAD
-import DateTimePicker from "@react-native-community/datetimepicker";
-
-=======
-
-// Import Date Picker
 import DateTimePicker from "@react-native-community/datetimepicker";
 
 let DatePicker;
@@ -24,7 +18,6 @@ if (Platform.OS === "web") {
   DatePicker = require("react-datepicker").default;
 }
 
->>>>>>> e6530eae2b707fbb7e7621e081908c62cdf311a0
 const PersonalDetailsScreen = ({ navigation }) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -34,21 +27,17 @@ const PersonalDetailsScreen = ({ navigation }) => {
   const [dateOfBirth, setDateOfBirth] = useState(null);
   const [showDatePicker, setShowDatePicker] = useState(false);
 
-<<<<<<< HEAD
-=======
   const handleDateChange = (date) => {
     setDateOfBirth(date);
     setShowDatePicker(false);
   };
 
->>>>>>> e6530eae2b707fbb7e7621e081908c62cdf311a0
   return (
     <View style={styles.container}>
       <ScrollView
         contentContainerStyle={styles.scrollContainer}
         showsVerticalScrollIndicator={false}
       >
-        {/* Profile Icon */}
         <Image
           source={{
             uri: "https://png.pngtree.com/png-clipart/20230423/original/pngtree-modern-finance-investment-logo-png-image_9077777.png",
@@ -56,7 +45,6 @@ const PersonalDetailsScreen = ({ navigation }) => {
           style={styles.profileIcon}
         />
 
-        {/* Header */}
         <Text style={styles.header}>
           Please fill & confirm your personal details.
         </Text>
@@ -64,7 +52,6 @@ const PersonalDetailsScreen = ({ navigation }) => {
           Please enter your personal details truthfully.
         </Text>
 
-        {/* Input Fields */}
         <View style={styles.inputContainer}>
           <Ionicons name="person-outline" size={20} color="#666" style={styles.icon} />
           <TextInput
@@ -95,21 +82,8 @@ const PersonalDetailsScreen = ({ navigation }) => {
           />
         </View>
 
-        {/* Date of Birth Picker */}
         <View style={styles.inputContainer}>
           <Ionicons name="calendar-outline" size={20} color="#666" style={styles.icon} />
-<<<<<<< HEAD
-          <TouchableOpacity onPress={() => setShowDatePicker(true)} style={{ flex: 1 }}>
-            <Text style={[styles.input, { color: dateOfBirth ? "#333" : "#888" }]}>
-              {dateOfBirth ? dateOfBirth.toLocaleDateString() : "Select Date of Birth"}
-            </Text>
-          </TouchableOpacity>
-        </View>
-
-        {showDatePicker && (
-          <DateTimePicker
-            value={dateOfBirth || new Date()}
-=======
           {Platform.OS === "web" && DatePicker ? (
             <DatePicker
               selected={dateOfBirth}
@@ -129,8 +103,7 @@ const PersonalDetailsScreen = ({ navigation }) => {
 
         {showDatePicker && Platform.OS !== "web" && (
           <DateTimePicker
-            value={dateOfBirth || new Date()} // Default to today if not selected
->>>>>>> e6530eae2b707fbb7e7621e081908c62cdf311a0
+            value={dateOfBirth || new Date()}
             mode="date"
             display="spinner"
             onChange={(event, selectedDate) => {
@@ -140,7 +113,6 @@ const PersonalDetailsScreen = ({ navigation }) => {
           />
         )}
 
-        {/* Phone Number Input */}
         <View style={styles.inputContainer}>
           <Ionicons name="call-outline" size={20} color="#666" style={styles.icon} />
           <TextInput
@@ -152,7 +124,6 @@ const PersonalDetailsScreen = ({ navigation }) => {
           />
         </View>
 
-        {/* Nationality Dropdown */}
         <View style={styles.inputContainer}>
           <Ionicons name="globe-outline" size={20} color="#666" style={styles.icon} />
           <Picker
@@ -168,13 +139,11 @@ const PersonalDetailsScreen = ({ navigation }) => {
           </Picker>
         </View>
 
-        {/* Privacy Disclaimer */}
         <Text style={styles.privacyText}>
           Your personal data is safe and stored securely.
         </Text>
       </ScrollView>
 
-      {/* Continue Button */}
       <TouchableOpacity
         style={styles.continueButton}
         onPress={() => navigation.navigate("ProfileAvatarSetup")}

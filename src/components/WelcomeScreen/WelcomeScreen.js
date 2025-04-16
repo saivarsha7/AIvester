@@ -1,7 +1,7 @@
 import React from "react";
-import { View, Text, Image, TouchableOpacity } from "react-native";
+import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import styles from "./WelcomeScreenStyles";
+
 console.log("WelcomeScreen Loaded!");
 
 const WelcomeScreen = ({ navigation }) => {
@@ -9,7 +9,9 @@ const WelcomeScreen = ({ navigation }) => {
     <View style={styles.container}>
       {/* Logo */}
       <Image
-        source={{ uri: "https://png.pngtree.com/png-clipart/20230326/original/pngtree-chip-ai-human-intelligence-technology-chip-high-tech-circuit-board-ai-png-image_9004996.png" }} // Use a valid online image
+        source={{
+          uri: "https://png.pngtree.com/png-clipart/20230326/original/pngtree-chip-ai-human-intelligence-technology-chip-high-tech-circuit-board-ai-png-image_9004996.png",
+        }}
         style={styles.logo}
       />
 
@@ -39,24 +41,87 @@ const WelcomeScreen = ({ navigation }) => {
       </View>
 
       {/* Get Started Button */}
-<<<<<<< HEAD
-      <TouchableOpacity style={styles.getStartedButton} onPress={() => navigation.navigate("Onboarding")}>
-
-=======
       <TouchableOpacity
         style={styles.getStartedButton}
         onPress={() => navigation?.navigate("Onboarding")}
       >
->>>>>>> e6530eae2b707fbb7e7621e081908c62cdf311a0
         <Text style={styles.getStartedText}>Get Started →</Text>
       </TouchableOpacity>
 
       {/* Already have an account */}
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation?.navigate("Login")}>
         <Text style={styles.loginText}>I already have an account</Text>
       </TouchableOpacity>
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+    alignItems: "center",
+    padding: 20,
+    justifyContent: "center",
+  },
+  logo: {
+    width: 120,
+    height: 120,
+    marginBottom: 20,
+  },
+  welcomeText: {
+    fontSize: 24,
+    fontWeight: "bold",
+    color: "#333",
+    marginBottom: 10,
+    textAlign: "center",
+  },
+  mainHeading: {
+    fontSize: 18,
+    color: "#666",
+    textAlign: "center",
+    marginBottom: 10,
+    paddingHorizontal: 10,
+  },
+  subHeading: {
+    fontSize: 14,
+    color: "#999",
+    textAlign: "center",
+    marginBottom: 20,
+    paddingHorizontal: 10,
+  },
+  featuresList: {
+    width: "100%",
+    marginBottom: 30,
+  },
+  featureItem: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 10,
+  },
+  featureText: {
+    marginLeft: 10,
+    fontSize: 14,
+    color: "#444",
+  },
+  getStartedButton: {
+    backgroundColor: "orange",
+    paddingVertical: 12,
+    paddingHorizontal: 30,
+    borderRadius: 8,
+    marginBottom: 10,
+  },
+  getStartedText: {
+    color: "#fff",
+    fontWeight: "bold",
+    fontSize: 16,
+  },
+  loginText: {
+    color: "orange",
+    fontSize: 14,
+    textDecorationLine: "underline",
+    marginTop: 10,
+  },
+});
 
 export default WelcomeScreen;

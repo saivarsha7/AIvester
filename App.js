@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 // import React from "react";
 // import Navigation from "./src/navigation/Navigation";
 
@@ -18,11 +18,11 @@ export default function App() {
   );
 }
 
-=======
+
 import React from "react";
 import Navigation from "./src/navigation/Navigation";
 
 export default function App() {
   return <Navigation />;
 }
->>>>>>> e6530eae2b707fbb7e7621e081908c62cdf311a0
+

@@ -7,12 +7,7 @@ import {
   StyleSheet,
   Alert,
 } from "react-native";
-<<<<<<< HEAD
-import * as ImagePicker from 'expo-image-picker';
-
-=======
 import * as ImagePicker from "expo-image-picker";
->>>>>>> e6530eae2b707fbb7e7621e081908c62cdf311a0
 
 const ProfileAvatarSetup = ({ navigation }) => {
   const [image, setImage] = useState(null);
@@ -101,7 +96,7 @@ const styles = StyleSheet.create({
     width: "80%",
     alignItems: "center",
   },
-  disabledButton: { backgroundColor: "#ccc" }, // Disabled button when no image is selected
+  disabledButton: { backgroundColor: "#ccc" },
   buttonText: { color: "#000", fontWeight: "bold", fontSize: 16 },
 });
 

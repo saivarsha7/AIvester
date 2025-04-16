@@ -6,11 +6,10 @@ const PortfolioCreatedScreen = ({ navigation }) => {
         <View style={styles.container}>
             {/* Header Illustration */}
             <Image 
-    source={{ uri: "https://static.vecteezy.com/system/resources/thumbnails/014/333/767/small_2x/businessman-in-white-shirt-blue-tie-celebrating-with-clenched-fists-in-front-of-positive-growing-bar-chart-with-coin-ornament-3d-rendering-of-business-investment-concept-png.png" }} 
-    style={styles.illustration} 
-    resizeMode="contain"
-/>
-
+                source={{ uri: "https://static.vecteezy.com/system/resources/thumbnails/014/333/767/small_2x/businessman-in-white-shirt-blue-tie-celebrating-with-clenched-fists-in-front-of-positive-growing-bar-chart-with-coin-ornament-3d-rendering-of-business-investment-concept-png.png" }} 
+                style={styles.illustration} 
+                resizeMode="contain"
+            />
 
             {/* Success Message */}
             <Text style={styles.title}>Portfolio Created!</Text>
@@ -29,11 +28,7 @@ const PortfolioCreatedScreen = ({ navigation }) => {
             {/* Adjust Investment Button */}
             <TouchableOpacity 
                 style={styles.adjustButton} 
-<<<<<<< HEAD
-                onPress={() => navigation.navigate("EditPortfolio")}
-=======
                 onPress={() => navigation.navigate("EditPortfolioScreen")}
->>>>>>> e6530eae2b707fbb7e7621e081908c62cdf311a0
             >
                 <Text style={styles.buttonText}>Adjust Investment</Text>
             </TouchableOpacity>

@@ -1,15 +1,6 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Dimensions } from "react-native";
-<<<<<<< HEAD
-// import Slider from "@react-native-community/slider";
-//import Slider from '@react-native-community/slider';
-import Slider from '@react-native-community/slider';
-
-
-
-=======
 import Slider from "@react-native-community/slider";
->>>>>>> e6530eae2b707fbb7e7621e081908c62cdf311a0
 import { ProgressChart } from "react-native-chart-kit";
 
 const SavingsTrackingScreen = ({ navigation }) => {
@@ -63,11 +54,7 @@ const SavingsTrackingScreen = ({ navigation }) => {
       {/* Continue Button */}
       <TouchableOpacity
         style={styles.continueButton}
-<<<<<<< HEAD
         onPress={() => navigation.navigate("InvestmentDurationScreen", { savingsPercentage })}
-=======
-        onPress={() => navigation.navigate("InvestmentDuration", { savingsPercentage })}
->>>>>>> e6530eae2b707fbb7e7621e081908c62cdf311a0
       >
         <Text style={styles.continueText}>Continue →</Text>
       </TouchableOpacity>

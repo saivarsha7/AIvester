@@ -21,16 +21,11 @@ const PortfolioCompletionScreen = ({ navigation }) => {
             </View>
 
             <TouchableOpacity 
-    style={styles.button} 
-<<<<<<< HEAD
-    onPress={() => navigation.navigate('HomesAndActivities')} // Navigate to Dashboard
-=======
-    onPress={() => navigation.navigate('PortfolioDashboard')} // Navigate to Dashboard
->>>>>>> e6530eae2b707fbb7e7621e081908c62cdf311a0
->
-    <Text style={styles.buttonText}>Start Investing →</Text>
-</TouchableOpacity>
-
+                style={styles.button} 
+                onPress={() => navigation.navigate('PortfolioDashboard')} // Navigate to Dashboard
+            >
+                <Text style={styles.buttonText}>Start Investing →</Text>
+            </TouchableOpacity>
         </View>
     );
 };

@@ -140,13 +140,9 @@ const AddNewPortfolioScreen = ({ navigation }) => {
             </View>
 
             {/* Footer Section: Save Button */}
-            <TouchableOpacity 
-                onPress={() => navigation.navigate("PortfolioCreated")} 
-<<<<<<< HEAD
-    style={styles.saveButton}
-=======
+            <TouchableOpacity
+                onPress={() => navigation.navigate("PortfolioCreated")}
                 style={styles.saveButton}
->>>>>>> e6530eae2b707fbb7e7621e081908c62cdf311a0
             >
                 <Text style={styles.saveButtonText}>Save Portfolio</Text>
             </TouchableOpacity>

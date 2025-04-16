@@ -37,7 +37,6 @@ const InvestingStrategyRecommendationScreen = ({ navigation }) => {
             <Text style={styles.chartPlaceholder}>[Graph Here]</Text>
           </View>
           <Text style={styles.projectionText}>$1,320,000 USD</Text>
-
         </View>
       </ScrollView>
 
@@ -70,7 +69,7 @@ const styles = StyleSheet.create({
   },
   innerContainer: {
     flexGrow: 1, 
-    justifyContent: "space-between" // Ensures proper layout
+    justifyContent: "space-between"
   },
   heading: { 
     fontSize: 22, 
@@ -149,8 +148,4 @@ const styles = StyleSheet.create({
   },
 });
 
-<<<<<<< HEAD
 export default InvestingStrategyRecommendationScreen;
-=======
-export default InvestingStrategyRecommendationScreen;
->>>>>>> e6530eae2b707fbb7e7621e081908c62cdf311a0
