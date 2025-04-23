@@ -7,6 +7,14 @@ export default function InvestmentSelectionScreen() {
   const navigation = useNavigation();
   const [selectedOption, setSelectedOption] = useState(null);
 
+  const handleContinue = () => {
+    if (selectedOption === "robo") {
+      navigation.navigate("AIHomeScreen");
+    } else if (selectedOption === "portfolio") {
+      navigation.navigate("RetirementPlanningScreen");
+    }
+  };
+
   return (
     <View style={styles.container}>
       {/* Top Navigation Icons */}
@@ -28,10 +36,15 @@ export default function InvestmentSelectionScreen() {
           styles.optionCard,
           selectedOption === "robo" ? styles.selectedCard : null,
         ]}
-        onPress={() => setSelectedOption("robo")}
+        onPress={() => {
+          setSelectedOption("robo");
+          navigation.navigate("AIHomeScreen");
+        }}
       >
         <Image
-          source={{ uri: "https://cdn-icons-png.flaticon.com/512/11782/11782356.png" }}
+          source={{
+            uri: "https://cdn-icons-png.flaticon.com/512/11782/11782356.png",
+          }}
           style={styles.icon}
         />
         <View>
@@ -47,10 +60,15 @@ export default function InvestmentSelectionScreen() {
           styles.optionCard,
           selectedOption === "portfolio" ? styles.selectedCard : null,
         ]}
-        onPress={() => setSelectedOption("portfolio")}
+        onPress={() => {
+          setSelectedOption("portfolio");
+          navigation.navigate("RetirementPlanningScreen");
+        }}
       >
         <Image
-          source={{ uri: "https://static.vecteezy.com/system/resources/previews/032/328/621/non_2x/portfolio-icon-design-free-png.png" }}
+          source={{
+            uri: "https://static.vecteezy.com/system/resources/previews/032/328/621/non_2x/portfolio-icon-design-free-png.png",
+          }}
           style={styles.icon}
         />
         <View>
@@ -63,8 +81,11 @@ export default function InvestmentSelectionScreen() {
 
       {/* Continue Button */}
       <TouchableOpacity
-        style={styles.continueButton}
-        onPress={() => navigation.navigate("RetirementPlanning")} // Replace with actual next screen
+        style={[
+          styles.continueButton,
+          !selectedOption && styles.disabledButton,
+        ]}
+        onPress={handleContinue}
         disabled={!selectedOption}
       >
         <Text style={styles.continueText}>Continue →</Text>
@@ -78,12 +99,17 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#F8F5EC", // Light beige background
     padding: 20,
+    justifyContent: "center",
   },
   header: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
     marginBottom: 20,
+    position: "absolute",
+    top: 50,
+    left: 20,
+    right: 20,
   },
   heading: {
     fontSize: 22,
@@ -104,8 +130,8 @@ const styles = StyleSheet.create({
     borderColor: "transparent",
   },
   selectedCard: {
-    borderColor: "#FFA500", // Highlight selected option with orange border
-    backgroundColor: "#FFF5E1", // Light orange background
+    borderColor: "#FFA500",
+    backgroundColor: "#FFF5E1",
   },
   icon: {
     width: 50,
@@ -126,7 +152,10 @@ const styles = StyleSheet.create({
     padding: 15,
     borderRadius: 8,
     alignItems: "center",
-    marginTop: 20,
+    marginTop: 30,
+  },
+  disabledButton: {
+    backgroundColor: "#ccc",
   },
   continueText: {
     fontSize: 18,

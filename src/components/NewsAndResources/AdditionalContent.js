@@ -37,7 +37,7 @@ const AdditionalContent = () => {
           Mastering Credit Scores: Tips to Boost Your Financial Health
         </Text>
         <View style={styles.newsStats}>
-          <Ionicons name="eye" size={16} color="white" />
+          <Ionicons name="eye" size={16} color="black" />
           <Text style={styles.statsText}>25,222</Text>
           <Ionicons name="heart" size={16} color="red" style={styles.heartIcon} />
           <Text style={styles.statsText}>22</Text>
@@ -57,7 +57,7 @@ const AdditionalContent = () => {
             <Text style={styles.courseTitle}>{course.title}</Text>
             <Text style={styles.courseAuthor}>{course.author}</Text>
             <View style={styles.courseStats}>
-              <Ionicons name="eye" size={14} color="white" />
+              <Ionicons name="eye" size={14} color="black" />
               <Text style={styles.statsText}>{course.views}</Text>
             </View>
           </View>
@@ -74,25 +74,29 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   sectionTitle: {
-    color: "white",
+    color: "black", // Dark color for section titles
     fontSize: 16,
     fontWeight: "bold",
   },
   seeAll: {
-    color: "#F5A623",
+    color: "#FFB84D", // Lightish orange color for "See All"
   },
   newsCard: {
-    backgroundColor: "#2C2C2C",
+    backgroundColor: "#FFEDD5", // Lightish orange background for news card
     padding: 15,
     borderRadius: 10,
     marginTop: 10,
+    shadowColor: "#000", // Shadow for the card
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 5,
   },
   newsDate: {
-    color: "#A0A0A0",
+    color: "#555", // Dark gray for date
     fontSize: 12,
   },
   newsTitle: {
-    color: "white",
+    color: "black", // Dark color for title
     fontSize: 14,
     fontWeight: "bold",
     marginTop: 5,
@@ -106,15 +110,19 @@ const styles = StyleSheet.create({
     marginLeft: 10,
   },
   statsText: {
-    color: "white",
+    color: "black", // Dark color for stats text
     marginLeft: 5,
   },
   courseCard: {
-    backgroundColor: "#2C2C2C",
+    backgroundColor: "#FFFFFF", // White background for course cards
     padding: 10,
     borderRadius: 10,
     marginRight: 10,
     width: 150,
+    shadowColor: "#000", // Adding shadow for course cards
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 5,
   },
   courseImage: {
     width: "100%",
@@ -125,20 +133,20 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 5,
     left: 5,
-    backgroundColor: "black",
+    backgroundColor: "#FFB84D", // Lightish orange background for course time
     color: "white",
     paddingHorizontal: 5,
     fontSize: 10,
     borderRadius: 3,
   },
   courseTitle: {
-    color: "white",
+    color: "black", // Dark text color for course title
     fontSize: 12,
     fontWeight: "bold",
     marginTop: 5,
   },
   courseAuthor: {
-    color: "#A0A0A0",
+    color: "#555", // Light gray for course author
     fontSize: 10,
   },
   courseStats: {

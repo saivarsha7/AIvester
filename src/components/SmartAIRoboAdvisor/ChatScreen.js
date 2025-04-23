@@ -1,10 +1,11 @@
-// ChatScreen.js
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {
   View, Text, TextInput, TouchableOpacity, FlatList, StyleSheet, Image
 } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const ChatScreen = () => {
+  const navigation = useNavigation();
   const [messages, setMessages] = useState([
     {
       id: '1',
@@ -23,12 +24,22 @@ const ChatScreen = () => {
 
   const sendMessage = () => {
     if (!input.trim()) return;
+    const messageText = input.trim().toLowerCase();
     const newMessage = { id: Date.now().toString(), sender: 'user', text: input };
     setMessages((prev) => [...prev, newMessage]);
     setInput('');
-    setIsTyping(true);
+
+    // Keyword-based navigation
+    if (messageText.includes('portfolio projection')) {
+      navigation.navigate('PortfolioAIProjectionScreen');
+      return;
+    } else if (messageText.includes('portfolio allocation')) {
+      navigation.navigate('PortfolioAllocationScreen');
+      return;
+    }
 
     // Simulate AI response
+    setIsTyping(true);
     setTimeout(() => {
       const aiReply = {
         id: Date.now().toString() + '_ai',

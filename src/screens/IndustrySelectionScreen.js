@@ -1,24 +1,43 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import Ionicons from "react-native-vector-icons/Ionicons"; // Icon import
 
 const IndustrySelectionScreen = ({ navigation }) => {
   const [selectedIndustries, setSelectedIndustries] = useState([]);
 
-  const industries = ["Tech", "Healthcare", "Energy", "Finance", "Real Estate", "Retail", "Automotive", "Consumer Goods"];
-  
+  const industries = [
+    "Tech",
+    "Healthcare",
+    "Energy",
+    "Finance",
+    "Real Estate",
+    "Retail",
+    "Automotive",
+    "Consumer Goods",
+  ];
+
   const toggleIndustry = (industry) => {
     setSelectedIndustries((prev) =>
-      prev.includes(industry) ? prev.filter((item) => item !== industry) : [...prev, industry]
+      prev.includes(industry)
+        ? prev.filter((item) => item !== industry)
+        : [...prev, industry]
     );
   };
 
   return (
     <View style={styles.container}>
-      {/* Icon */}
-      <Text style={styles.icon}>🏭</Text>
+      {/* Icon on Top Right Corner */}
+      <TouchableOpacity
+        style={styles.topRightIcon}
+        onPress={() => navigation.navigate("RetirementPlanningScreen")}
+      >
+        <Ionicons name="business-outline" size={28} color="#333" />
+      </TouchableOpacity>
 
       {/* Question */}
-      <Text style={styles.question}>Are there any specific industries that you’d like to focus on?</Text>
+      <Text style={styles.question}>
+        Are there any specific industries that you’d like to focus on?
+      </Text>
 
       {/* Industry Selection Pills */}
       <View style={styles.pillContainer}>
@@ -69,8 +88,7 @@ const IndustrySelectionScreen = ({ navigation }) => {
       {/* Continue Button */}
       <TouchableOpacity
         style={styles.continueButton}
-        onPress={() => navigation.navigate("DebtLevel")}
-
+        onPress={() => navigation.navigate("DebtLevelScreen")}
       >
         <Text style={styles.continueText}>Continue →</Text>
       </TouchableOpacity>
@@ -88,9 +106,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     paddingHorizontal: 20,
   },
-  icon: {
-    fontSize: 40,
-    marginBottom: 20,
+  topRightIcon: {
+    position: "absolute",
+    top: 50,
+    right: 20,
+    zIndex: 10,
   },
   question: {
     fontSize: 18,
@@ -98,6 +118,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginBottom: 20,
     color: "#333",
+    marginTop: 80,
   },
   pillContainer: {
     flexDirection: "row",

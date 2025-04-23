@@ -44,7 +44,7 @@ const InvestingStrategyRecommendationScreen = ({ navigation }) => {
       <View style={styles.buttonContainer}>
         <TouchableOpacity 
           style={styles.continueButton} 
-          onPress={() => navigation.navigate("InvestmentSetup")}
+          onPress={() => navigation.navigate("InvestmentSetupScreen")}
         >
           <Text style={styles.continueButtonText}>Continue</Text>
         </TouchableOpacity>

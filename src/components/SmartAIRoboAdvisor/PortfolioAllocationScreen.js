@@ -17,7 +17,7 @@ const PortfolioAllocationScreen = () => {
         <View style={styles.card}>
           <Text style={styles.cardTitle}>My Portfolio</Text>
           <Text style={styles.cardSubtitle}>Jan 2025</Text>
-          <Image source={require('../../assets/port.png')} style={styles.chartImage} />
+          <Image source={require('../../../assets/port.png')} style={styles.chartImage} />
           <Text style={styles.cardTotal}>Total: $40,356.26</Text>
           <Text style={styles.cardReturn}>Variation: -4.25%</Text>
         </View>

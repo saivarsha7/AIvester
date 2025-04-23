@@ -17,11 +17,36 @@ const CommunityHomeScreen = ({ navigation }) => {
         <Text style={styles.buttonText}>Explore Community</Text>
       </TouchableOpacity>
       <View style={styles.navbar}>
-        <Icon name="home" size={24} color="#333" />
-        <Icon name="bar-chart" size={24} color="#333" />
-        <Icon name="people" size={24} color="#F4A000" />
-        <Icon name="sync-alt" size={24} color="#333" />
-        <Icon name="person" size={24} color="#333" />
+        <Icon
+          name="home"
+          size={24}
+          color="#333"
+          onPress={() => navigation.navigate("HomesAndActvitiesScreen")} // Navigate to HomeScreen
+        />
+        <Icon
+          name="bar-chart"
+          size={24}
+          color="#333"
+          onPress={() => navigation.navigate("InvestingStrategyRecommendationScreen")} // Navigate to AnalyticsScreen
+        />
+        <Icon
+          name="people"
+          size={24}
+          color="#F4A000"
+          onPress={() => navigation.navigate("CommunityHomeScreen")} // Navigate to CommunityScreen
+        />
+        <Icon
+          name="sync-alt"
+          size={24}
+          color="#333"
+          onPress={() => navigation.navigate("HomeScreen")} // Navigate to SyncScreen
+        />
+        <Icon
+          name="person"
+          size={24}
+          color="#333"
+          onPress={() => navigation.navigate("PortfolioDashboardScreen")} // Navigate to ProfileScreen
+        />
       </View>
     </View>
   );

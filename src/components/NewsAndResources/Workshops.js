@@ -1,5 +1,12 @@
 import React from "react";
-import { View, Text, ScrollView, Image, StyleSheet,TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  ScrollView,
+  Image,
+  StyleSheet,
+  TouchableOpacity,
+} from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 
@@ -31,16 +38,16 @@ const workshops = [
 ];
 
 const Workshops = () => {
-  const navigation=useNavigation();
+  const navigation = useNavigation();
   return (
-    <View>
+    <View style={styles.container}>
       <View style={styles.sectionHeader}>
         <Text style={styles.sectionTitle}>Workshops</Text>
         <TouchableOpacity onPress={() => navigation.navigate("CoursesAndWorkshops")}>
-                    <Text style={styles.seeAll}>See All</Text>
-                  </TouchableOpacity>
+          <Text style={styles.seeAll}>See All</Text>
+        </TouchableOpacity>
       </View>
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         {workshops.map((workshop, index) => (
           <View key={index} style={styles.workshopCard}>
             <View style={styles.textContainer}>
@@ -49,9 +56,9 @@ const Workshops = () => {
               </Text>
               <Text style={styles.workshopTitle}>{workshop.title}</Text>
               <View style={styles.statsContainer}>
-                <Ionicons name="eye" size={14} color="white" />
+                <Ionicons name="eye" size={14} color="#FF8C00" />
                 <Text style={styles.statsText}>{workshop.views}</Text>
-                <Ionicons name="heart" size={14} color="red" style={styles.heartIcon} />
+                <Ionicons name="heart" size={14} color="#FF4500" style={styles.heartIcon} />
                 <Text style={styles.statsText}>{workshop.likes}</Text>
               </View>
             </View>
@@ -64,36 +71,46 @@ const Workshops = () => {
 };
 
 const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#FFF4E6", // Lightish orange background
+    paddingHorizontal: 20,
+    paddingTop: 20,
+    paddingBottom: 10,
+    flex: 1,
+  },
   sectionHeader: {
     flexDirection: "row",
     justifyContent: "space-between",
-    marginTop: 20,
+    marginBottom: 10,
   },
   sectionTitle: {
-    color: "white",
-    fontSize: 16,
+    color: "#FF8C00",
+    fontSize: 18,
     fontWeight: "bold",
   },
   seeAll: {
-    color: "#F5A623",
+    color: "#FFA500",
+    fontWeight: "600",
   },
   workshopCard: {
-    backgroundColor: "#2C2C2C",
+    backgroundColor: "#FFECD1", // Soft card background that complements main bg
     padding: 15,
-    borderRadius: 10,
+    borderRadius: 12,
     marginTop: 10,
     flexDirection: "row",
     justifyContent: "space-between",
+    elevation: 2,
   },
   textContainer: {
     flex: 1,
+    marginRight: 10,
   },
   workshopDate: {
-    color: "#A0A0A0",
+    color: "#A0522D",
     fontSize: 12,
   },
   workshopTitle: {
-    color: "white",
+    color: "#333333",
     fontSize: 14,
     fontWeight: "bold",
     marginTop: 5,
@@ -107,13 +124,14 @@ const styles = StyleSheet.create({
     marginLeft: 10,
   },
   statsText: {
-    color: "white",
+    color: "#A0522D",
     marginLeft: 5,
+    fontSize: 12,
   },
   workshopImage: {
     width: 60,
     height: 60,
-    borderRadius: 5,
+    borderRadius: 6,
   },
 });
 

@@ -14,7 +14,7 @@ const InvestmentSetupScreen = ({ navigation }) => {
       {/* Get Started Button */}
       <TouchableOpacity 
         style={styles.button} 
-        onPress={() => navigation.navigate("InvestmentSelection")}  // Replace with actual screen name
+        onPress={() => navigation.navigate("InvestmentSelectionScreen")}  // Replace with actual screen name
       >
         <Text style={styles.buttonText}>Get Started</Text>
       </TouchableOpacity>

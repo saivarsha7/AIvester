@@ -43,7 +43,7 @@ const InvestmentRiskScreen = ({ navigation }) => {
       <Text style={styles.description}>{description}</Text>
 
       {/* Continue Button */}
-      <TouchableOpacity style={styles.continueButton} onPress={() => navigation.navigate("IndustrySelection")}      >
+      <TouchableOpacity style={styles.continueButton} onPress={() => navigation.navigate("AssetSelectionScreen")}      >
         <Text style={styles.continueText}>Continue →</Text>
       </TouchableOpacity>
     </View>

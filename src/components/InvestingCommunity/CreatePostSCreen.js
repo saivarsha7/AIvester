@@ -7,16 +7,21 @@ const CreatePostScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      {/* Header */}
+      {/* Header with Back and Home */}
       <View style={styles.header}>
-        <Ionicons name="arrow-back" size={24} color="black" onPress={() => navigation.goBack()} />
+        <TouchableOpacity onPress={() => navigation.goBack()}>
+          <Ionicons name="arrow-back" size={24} color="black" />
+        </TouchableOpacity>
         <Text style={styles.headerTitle}>Add New Post (Text)</Text>
+        <TouchableOpacity onPress={() => navigation.navigate("NewsAndResourcesScreen")}>
+          <Ionicons name="home-outline" size={24} color="orange" />
+        </TouchableOpacity>
       </View>
 
       {/* Profile Picture & Input */}
       <View style={styles.inputContainer}>
         <Image
-          source={{ uri: "https://via.placeholder.com/50" }} // Replace with actual user profile image
+          source={{ uri: "https://via.placeholder.com/50" }}
           style={styles.profileImage}
         />
         <TextInput
@@ -56,18 +61,19 @@ const CreatePostScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fdf6ec", // Beige gradient background
+    backgroundColor: "#fdf6ec",
     padding: 20,
   },
   header: {
     flexDirection: "row",
     alignItems: "center",
+    justifyContent: "space-between",
     marginBottom: 20,
   },
   headerTitle: {
     fontSize: 18,
     fontWeight: "bold",
-    marginLeft: 10,
+    color: "#333",
   },
   inputContainer: {
     flexDirection: "row",

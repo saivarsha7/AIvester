@@ -4,7 +4,7 @@ import Slider from "@react-native-community/slider";
 import { ProgressChart } from "react-native-chart-kit";
 
 const SavingsTrackingScreen = ({ navigation }) => {
-  const [savingsPercentage, setSavingsPercentage] = useState(25); // Default 25%
+  const [savingsPercentage, setSavingsPercentage] = useState(25);
 
   return (
     <View style={styles.container}>
@@ -18,27 +18,27 @@ const SavingsTrackingScreen = ({ navigation }) => {
         How much percentage of your income do you usually save every month?
       </Text>
 
-      {/* Progress Chart */}
-      <ProgressChart
-        data={{ data: [savingsPercentage / 100] }} // Convert to 0-1 range
-        width={Dimensions.get("window").width - 40}
-        height={220}
-        strokeWidth={12}
-        radius={80}
-        chartConfig={{
-          backgroundGradientFrom: "#fdf6e3",
-          backgroundGradientTo: "#fdf6e3",
-          color: (opacity = 1) => `rgba(0, 128, 0, ${opacity})`,
-          strokeWidth: 2,
-        }}
-        hideLegend={true}
-      />
+      {/* Chart with center percentage */}
+      <View style={styles.chartWrapper}>
+        <ProgressChart
+          data={{ data: [savingsPercentage / 100] }}
+          width={Dimensions.get("window").width - 40}
+          height={220}
+          strokeWidth={12}
+          radius={80}
+          chartConfig={{
+            backgroundGradientFrom: "#fdf6e3",
+            backgroundGradientTo: "#fdf6e3",
+            color: (opacity = 1) => `rgba(0, 128, 0, ${opacity})`,
+            strokeWidth: 2,
+          }}
+          hideLegend={true}
+        />
+        <Text style={styles.percentageText}>{savingsPercentage}%</Text>
+      </View>
 
-      {/* Percentage Text */}
-      <Text style={styles.percentageText}>{savingsPercentage}%</Text>
       <Text style={styles.helperText}>I save {savingsPercentage}% of my income.</Text>
 
-      {/* Slider to Adjust Percentage */}
       <Slider
         style={styles.slider}
         minimumValue={0}
@@ -51,10 +51,9 @@ const SavingsTrackingScreen = ({ navigation }) => {
         thumbTintColor="green"
       />
 
-      {/* Continue Button */}
       <TouchableOpacity
         style={styles.continueButton}
-        onPress={() => navigation.navigate("InvestmentDurationScreen", { savingsPercentage })}
+        onPress={() => navigation.navigate("IndustrySelectionScreen", { savingsPercentage })}
       >
         <Text style={styles.continueText}>Continue →</Text>
       </TouchableOpacity>
@@ -71,6 +70,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     paddingHorizontal: 20,
+    paddingBottom: 60,
   },
   iconContainer: {
     marginBottom: 20,
@@ -85,11 +85,16 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     color: "#333",
   },
+  chartWrapper: {
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: 10,
+  },
   percentageText: {
+    position: "absolute",
     fontSize: 28,
     fontWeight: "bold",
     color: "green",
-    marginTop: -130,
   },
   helperText: {
     fontSize: 16,

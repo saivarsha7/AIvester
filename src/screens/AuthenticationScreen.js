@@ -12,7 +12,7 @@ const AuthenticationScreen = ({ navigation }) => {
     <View style={styles.container}>
       {/* Logo */}
       <Image 
-        source={require("../../assets/logo.png")} 
+        source={require("../../assets/logo.jpg")} 
         style={styles.logo} 
       />
 
@@ -62,14 +62,14 @@ const AuthenticationScreen = ({ navigation }) => {
       </View>
 
       {/* Sign In Button */}
-      <TouchableOpacity style={styles.signInButton} onPress={() => navigation.navigate("NameScreen")}>
+      <TouchableOpacity style={styles.signInButton} onPress={() => navigation.navigate("HomesAndActivitiesScreen")}>
         <Text style={styles.buttonText}>Sign In</Text>
       </TouchableOpacity>
 
       {/* Create Account Button */}
       <TouchableOpacity 
         style={styles.createAccountButton} 
-        onPress={() => navigation.navigate("ProfileSetup")}
+        onPress={() => navigation.navigate("HomeScreen")}
       >
         <Text style={styles.createAccountText}>Create New Account</Text>
       </TouchableOpacity>

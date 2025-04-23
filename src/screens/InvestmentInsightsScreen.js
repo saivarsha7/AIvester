@@ -19,7 +19,7 @@ const InvestmentInsightsScreen = ({ navigation }) => {
                     <View style={styles.header}>
                         <Text style={styles.title}>Portfolio Insight</Text>
                         <View style={styles.iconContainer}>
-                            <TouchableOpacity onPress={() => navigation.navigate('EditPortfolio')}>
+                            <TouchableOpacity onPress={() => navigation.navigate('EditPortfolioScreen')}>
                                 <Ionicons name="create-outline" size={24} color="#ff8c00" />
                             </TouchableOpacity>
                             <TouchableOpacity>
@@ -143,7 +143,7 @@ const InvestmentInsightsScreen = ({ navigation }) => {
 
                 {/* Navigation Bar */}
                 <View style={styles.navBar}>
-                    <TouchableOpacity onPress={() => navigation.navigate('PortfolioDashboard')}>
+                    <TouchableOpacity onPress={() => navigation.navigate('PortfolioDashboardScreen')}>
                         <Ionicons name="home-outline" size={28} color="black" />
                     </TouchableOpacity>
                     <TouchableOpacity>

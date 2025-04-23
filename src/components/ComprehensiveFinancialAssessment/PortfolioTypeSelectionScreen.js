@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-const PortfolioTypeScreen = () => {
+const PortfolioTypeSelectionScreen = () => {
   const navigation = useNavigation();
   const [selectedOption, setSelectedOption] = useState(null);
 
@@ -11,19 +11,19 @@ const PortfolioTypeScreen = () => {
       id: 'socially_responsible',
       title: 'Socially Responsible',
       description: 'Invests in companies committed to sustainability.',
-      image: require('../../assets/socially_responsible.png'), // Update the correct path
+      image: require('../../../assets/socially_responsible.png'), // Update the correct path
     },
     {
       id: 'hi_growth',
       title: 'High Growth',
       description: 'Targets investments in companies with rapid growth.',
-      image: require('../../assets/favicon.png'),
+      image: require('../../../assets/gainers.png'),
     },
     {
       id: 'passive_income',
       title: 'Passive Income',
       description: 'Prioritizes assets that generate consistent income.',
-      image: require('../../assets/favicon.png'),
+      image: require('../../../assets/passive.png'),
     },
   ];
 
@@ -69,7 +69,7 @@ const PortfolioTypeScreen = () => {
           styles.continueButton,
           !selectedOption && styles.disabledButton,
         ]}
-        onPress={() => navigation.navigate('AIHomeScreen')} // Update screen name
+        onPress={() => navigation.navigate('ProfileSetupScreen')} // Update screen name
         disabled={!selectedOption}
       >
         <Text style={styles.continueText}>Continue →</Text>
@@ -103,4 +103,4 @@ const styles = StyleSheet.create({
   preferText: { fontSize: 16, color: 'orange' },
 });
 
-export default PortfolioTypeScreen;
+export default PortfolioTypeSelectionScreen;

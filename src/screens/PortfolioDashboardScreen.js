@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Image, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import { LineChart } from 'react-native-chart-kit';
 import { Ionicons, FontAwesome5 } from '@expo/vector-icons';
 
@@ -99,7 +99,7 @@ const PortfolioDashboardScreen = ({ navigation }) => {
                     <Text style={styles.insightText}>You haven’t made any stock investments in Trade</Text>
                     <TouchableOpacity 
                         style={styles.insightButton} 
-                        onPress={() => navigation.navigate('InvestmentInsights')}
+                        onPress={() => navigation.navigate('InvestmentInsightsScreen')}
                     >
                         <Text style={styles.insightButtonText}>See All Insights →</Text>
                     </TouchableOpacity>
@@ -128,7 +128,7 @@ const PortfolioDashboardScreen = ({ navigation }) => {
                 <View style={{ alignItems: 'center', marginVertical: 20 }}>
                     <TouchableOpacity 
                         style={styles.editButton}
-                        onPress={() => navigation.navigate('EditPortfolio')}
+                        onPress={() => navigation.navigate('EditPortfolioScreen')}
                     >
                         <Text style={styles.editButtonText}>Edit Portfolio</Text>
                     </TouchableOpacity>

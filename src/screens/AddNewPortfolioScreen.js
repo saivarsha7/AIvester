@@ -29,8 +29,15 @@ const AddNewPortfolioScreen = ({ navigation }) => {
                 <TouchableOpacity onPress={() => navigation.goBack()}>
                     <Ionicons name="arrow-back" size={24} color="#333" />
                 </TouchableOpacity>
+
+                {/* Home Icon */}
+                <TouchableOpacity onPress={() => navigation.navigate("NewsAndResourcesScreen")}>
+                    <Ionicons name="home" size={24} color="#333" />
+                </TouchableOpacity>
+
                 <Text style={styles.title}>Add New Portfolio</Text>
-                <TouchableOpacity onPress={() => navigation.navigate("AddInvestmentToRetirement")}>
+
+                <TouchableOpacity onPress={() => navigation.navigate("AddInvestmentToRetirementScreen")}>
                     <Text style={styles.retirementPlanButton}>Retirement Plan</Text>
                 </TouchableOpacity>
             </View>
@@ -74,10 +81,7 @@ const AddNewPortfolioScreen = ({ navigation }) => {
                         <TouchableOpacity
                             key={index}
                             onPress={() => setSelectedIcon(icon)}
-                            style={[
-                                styles.iconWrapper,
-                                selectedIcon === icon && styles.selectedIcon
-                            ]}
+                            style={[styles.iconWrapper, selectedIcon === icon && styles.selectedIcon]}
                         >
                             <FontAwesome5 name={icon} size={24} color="#555" />
                         </TouchableOpacity>
@@ -93,11 +97,7 @@ const AddNewPortfolioScreen = ({ navigation }) => {
                         <TouchableOpacity
                             key={index}
                             onPress={() => setSelectedColor(color)}
-                            style={[
-                                styles.colorSwatch,
-                                { backgroundColor: color },
-                                selectedColor === color && styles.selectedColorSwatch
-                            ]}
+                            style={[styles.colorSwatch, { backgroundColor: color }, selectedColor === color && styles.selectedColorSwatch]}
                         />
                     ))}
                 </View>
@@ -133,20 +133,14 @@ const AddNewPortfolioScreen = ({ navigation }) => {
                         maximumTrackTintColor="#ccc"
                         thumbTintColor="#ff8c00"
                     />
-                    <Text style={styles.helperText}>
-                        Adjust based on your comfort with risk.
-                    </Text>
+                    <Text style={styles.helperText}>Adjust based on your comfort with risk.</Text>
                 </View>
             </View>
 
             {/* Footer Section: Save Button */}
-            <TouchableOpacity
-                onPress={() => navigation.navigate("PortfolioCreated")}
-                style={styles.saveButton}
-            >
+            <TouchableOpacity onPress={() => navigation.navigate("PortfolioCreatedScreen")} style={styles.saveButton}>
                 <Text style={styles.saveButtonText}>Save Portfolio</Text>
             </TouchableOpacity>
-
         </ScrollView>
     );
 };

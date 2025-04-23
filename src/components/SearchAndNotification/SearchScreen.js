@@ -1,15 +1,31 @@
-import React from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Keyboard } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 const SearchScreen = () => {
   const navigation = useNavigation();
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const handleSearch = () => {
+    const trimmedQuery = searchQuery.trim().toLowerCase();
+    if (trimmedQuery === 'news') {
+      navigation.navigate('NewsScreen');
+    }
+    Keyboard.dismiss();
+  };
 
   return (
     <View style={styles.container}>
       {/* Search Input */}
       <Text style={styles.heading}>Search Anything...</Text>
-      <TextInput style={styles.searchInput} placeholder="Search..." />
+      <TextInput
+        style={styles.searchInput}
+        placeholder="Search..."
+        value={searchQuery}
+        onChangeText={setSearchQuery}
+        onSubmitEditing={handleSearch}
+        returnKeyType="search"
+      />
 
       {/* Trending Searches */}
       <Text style={styles.subHeading}>Trending Searches</Text>

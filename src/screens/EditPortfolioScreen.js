@@ -30,7 +30,9 @@ const EditPortfolioScreen = ({ navigation }) => {
                     <Ionicons name="arrow-back" size={24} color="#333" />
                 </TouchableOpacity>
                 <Text style={styles.title}>Edit Portfolio</Text>
-                <View style={{ width: 24 }} />
+                <TouchableOpacity onPress={() => navigation.navigate("HomesAndActivitiesScreen")}>
+                    <Ionicons name="home" size={24} color="#333" />
+                </TouchableOpacity>
             </View>
 
             {/* Section 1: General Information */}
@@ -41,7 +43,6 @@ const EditPortfolioScreen = ({ navigation }) => {
                     value={portfolioName}
                     onChangeText={setPortfolioName}
                 />
-
                 <Text style={styles.label}>Investment Amount ($)</Text>
                 <TextInput
                     style={styles.input}
@@ -49,7 +50,6 @@ const EditPortfolioScreen = ({ navigation }) => {
                     onChangeText={setInvestmentAmount}
                     keyboardType="numeric"
                 />
-
                 <Text style={styles.label}>Target Date</Text>
                 <TextInput
                     style={styles.input}
@@ -137,13 +137,12 @@ const EditPortfolioScreen = ({ navigation }) => {
             </TouchableOpacity>
 
             {/* Add New Portfolio Button */}
-            <TouchableOpacity 
-                style={styles.addButton} 
-                onPress={() => navigation.navigate("AddNewPortfolio")}
+            <TouchableOpacity
+                style={styles.addButton}
+                onPress={() => navigation.navigate("AddNewPortfolioScreen")}
             >
                 <Text style={styles.addButtonText}>+ Add New Portfolio</Text>
             </TouchableOpacity>
-
         </ScrollView>
     );
 };

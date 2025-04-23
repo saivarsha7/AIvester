@@ -1,23 +1,37 @@
 import React, { useState } from "react";
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
 
 export default function RetirementPlanningScreen({ navigation }) {
   const [amount, setAmount] = useState(0);
 
   const increaseAmount = () => {
-    setAmount(prevAmount => prevAmount + 1000); // Increment by $1000
+    setAmount(prevAmount => prevAmount + 1000);
   };
 
   const decreaseAmount = () => {
     if (amount > 0) {
-      setAmount(prevAmount => prevAmount - 1000); // Decrement by $1000
+      setAmount(prevAmount => prevAmount - 1000);
     }
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.heading}>How much total asset do you need to achieve your retirement goal?</Text>
-      
+      {/* Top Icons */}
+      <View style={styles.iconBar}>
+        <TouchableOpacity onPress={() => navigation.navigate("HomesAndActivitiesScreen")}>
+          <Ionicons name="home-outline" size={28} color="#FFA500" />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("InvestmentSelectionScreen")}>
+          <Ionicons name="trending-up-outline" size={28} color="#FFA500" />
+        </TouchableOpacity>
+      </View>
+
+      {/* Main Content */}
+      <Text style={styles.heading}>
+        How much total asset do you need to achieve your retirement goal?
+      </Text>
+
       <View style={styles.inputContainer}>
         <TouchableOpacity onPress={decreaseAmount} style={styles.adjustButton}>
           <Text style={styles.adjustText}>-</Text>
@@ -36,7 +50,10 @@ export default function RetirementPlanningScreen({ navigation }) {
 
       <Text style={styles.helperText}>I need ${amount.toLocaleString()}.00</Text>
 
-      <TouchableOpacity style={styles.continueButton} onPress={() => navigation.navigate("SavingsTracking")}>
+      <TouchableOpacity
+        style={styles.continueButton}
+        onPress={() => navigation.navigate("SavingsTrackingScreen")}
+      >
         <Text style={styles.continueText}>Continue →</Text>
       </TouchableOpacity>
     </View>
@@ -46,10 +63,14 @@ export default function RetirementPlanningScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#F5EFE6", // Light beige background
-    justifyContent: "center",
-    alignItems: "center",
+    backgroundColor: "#F5EFE6",
     padding: 20,
+    paddingTop: 50,
+  },
+  iconBar: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginBottom: 20,
   },
   heading: {
     fontSize: 20,
@@ -61,6 +82,7 @@ const styles = StyleSheet.create({
   inputContainer: {
     flexDirection: "row",
     alignItems: "center",
+    justifyContent: "center",
     marginBottom: 10,
   },
   adjustButton: {
@@ -88,7 +110,8 @@ const styles = StyleSheet.create({
   helperText: {
     fontSize: 14,
     color: "#666",
-    marginBottom: 20,
+    textAlign: "center",
+    marginTop: 10,
   },
   continueButton: {
     backgroundColor: "#FFA500",
@@ -96,6 +119,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 30,
     borderRadius: 5,
     marginTop: 20,
+    alignSelf: "center",
   },
   continueText: {
     color: "#fff",

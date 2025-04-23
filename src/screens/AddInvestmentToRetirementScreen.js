@@ -42,7 +42,7 @@ const AddInvestmentToRetirementScreen = ({ navigation }) => {
                 <>
                     <TouchableOpacity
                         style={styles.proceedButton}
-                        onPress={() => navigation.navigate("StockSelection")}
+                        onPress={() => navigation.navigate("StockSelectionScreen")}
                     >
                         <Text style={styles.proceedButtonText}>Set & Proceed</Text>
                     </TouchableOpacity>

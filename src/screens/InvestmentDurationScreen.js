@@ -41,7 +41,7 @@ const InvestmentDurationScreen = ({ navigation }) => {
       {/* Continue Button */}
       <TouchableOpacity
   style={styles.continueButton}
-  onPress={() => navigation.navigate("InvestmentRisk")}
+  onPress={() => navigation.navigate("InvestmentRiskScreen")}
 >
   <Text style={styles.continueText}>Continue →</Text>
 </TouchableOpacity>

@@ -46,7 +46,7 @@ const ProfileSetupScreen = ({ navigation }) => {
         ))}
       </View>
 
-      <TouchableOpacity style={styles.continueButton} onPress={() => navigation.navigate("PersonalDetails")}>
+      <TouchableOpacity style={styles.continueButton} onPress={() => navigation.navigate("PersonalDetailsScreen")}>
   <Text style={styles.buttonText}>Continue →</Text>
 </TouchableOpacity>
 

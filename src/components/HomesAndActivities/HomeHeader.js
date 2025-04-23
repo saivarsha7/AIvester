@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: 20,
-    backgroundColor: '#1E1E1E',
+    backgroundColor: '#000', // Black background
   },
   profileImage: {
     width: 40,
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#fff',
+    color: '#fff', // White text for title
   },
 });
 

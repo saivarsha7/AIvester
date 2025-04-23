@@ -1,64 +1,12 @@
-// import React from "react";
-// import { View, Text, StyleSheet, ScrollView } from "react-native";
-// import SearchBar from "./SearchBar";
-// import MarketStats from "./MarketStats";
-// import PopularMovements from "./PopularMovements";
-// import TrendingAssets from "./TrendingAssets";
-// import MarketIndexes from "./MarketIndexes";
-// const MarketScreen = () => {
-//   return (
-//     <View style={styles.container}>
-//       {/* Header */}
-//       <Text style={styles.heading}>Explore Market</Text>
-//       <Text style={styles.subHeading}>
-//         Explore market statistics, stocks, ETFs, and other assets in real time.
-//       </Text>
-
-//       {/* Search Bar */}
-//       <SearchBar />
-
-//       {/* Market Stats */}
-//       <MarketStats />
-
-//       {/* Popular Movements */}
-//       <ScrollView nestedScrollEnabled={true}  showsVerticalScrollIndicator={false}>
-//         <PopularMovements />
-//         <TrendingAssets />
-//         <MarketIndexes />
-//       </ScrollView>
-//     </View>
-//   );
-// };
-
-// export default MarketScreen;
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: "#121212",
-//     padding: 20,
-//   },
-//   heading: {
-//     fontSize: 22,
-//     fontWeight: "bold",
-//     color: "white",
-//     marginBottom: 5,
-//   },
-//   subHeading: {
-//     fontSize: 14,
-//     color: "#aaa",
-//     marginBottom: 15,
-//   },
-// });
 import React from "react";
 import { View, Text, StyleSheet, FlatList, TouchableOpacity } from "react-native";
-import { useNavigation } from "@react-navigation/native"; // Import navigation hook
+import { useNavigation } from "@react-navigation/native";
 import SearchBar from "./SearchBar";
 import MarketStats from "./MarketStats";
 import PopularMovements from "./PopularMovements";
 import TrendingAssets from "./TrendingAssets";
-import MarketIndexes from "./MarketIndexes";
 import MarketMovers from "./MarketMovers";
+import MarketIndexes from "./MarketIndexes";
 import MyListings from "./MyListings";
 import SectorPerformance from "./SectorPerformance";
 import NewsArticles from "./NewsArticles";
@@ -66,7 +14,7 @@ import NoDataAvailable from "./NoDataAvailable";
 import BottomNavigation from "../HomesAndActivities/BottomNavigation";
 
 const MarketScreen = () => {
-  const navigation = useNavigation(); // Get navigation object
+  const navigation = useNavigation();
 
   const components = [
     { id: "1", component: <PopularMovements /> },
@@ -81,22 +29,27 @@ const MarketScreen = () => {
 
   return (
     <View style={styles.container}>
+      {/* Header */}
       <Text style={styles.heading}>Explore Market</Text>
       <Text style={styles.subHeading}>
         Explore market statistics, stocks, ETFs, and other assets in real time.
       </Text>
 
+      {/* Search */}
       <SearchBar />
+
+      {/* Market Statistics */}
       <MarketStats />
 
-      {/* Button to Navigate to AllStocks */}
-      <TouchableOpacity 
-        style={styles.button} 
+      {/* View All Stocks Button */}
+      <TouchableOpacity
+        style={styles.button}
         onPress={() => navigation.navigate("AllStocks")}
       >
         <Text style={styles.buttonText}>View All Stocks</Text>
       </TouchableOpacity>
 
+      {/* Dynamic Sections */}
       <FlatList
         data={components}
         keyExtractor={(item) => item.id}
@@ -104,6 +57,7 @@ const MarketScreen = () => {
         showsVerticalScrollIndicator={false}
       />
 
+      {/* Bottom Navigation */}
       <BottomNavigation />
     </View>
   );
@@ -114,30 +68,35 @@ export default MarketScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#121212",
+    backgroundColor: "#FFFFFF",
     padding: 20,
   },
   heading: {
-    fontSize: 22,
+    fontSize: 24,
     fontWeight: "bold",
-    color: "white",
+    color: "#FF6B00",
     marginBottom: 5,
   },
   subHeading: {
     fontSize: 14,
-    color: "#aaa",
+    color: "#555",
     marginBottom: 15,
   },
   button: {
-    backgroundColor: "#1E90FF",
-    padding: 10,
-    borderRadius: 8,
+    backgroundColor: "#FF6B00",
+    padding: 12,
+    borderRadius: 10,
     alignItems: "center",
-    marginVertical: 10,
+    marginVertical: 16,
+    shadowColor: "#FF6B00",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 4,
+    elevation: 4,
   },
   buttonText: {
-    color: "white",
+    color: "#FFF",
     fontSize: 16,
-    fontWeight: "bold",
+    fontWeight: "600",
   },
 });

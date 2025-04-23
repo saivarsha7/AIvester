@@ -61,7 +61,7 @@ const PortfolioProjectionScreen = ({ navigation }) => {
             {/* Continue Button */}
             <TouchableOpacity
                 style={styles.button}
-                onPress={() => navigation.navigate('PortfolioCompletion')} // Replace with actual next screen name
+                onPress={() => navigation.navigate('PortfolioCompletionScreen')} // Replace with actual next screen name
             >
                 <Text style={styles.buttonText}>Continue →</Text>
             </TouchableOpacity>

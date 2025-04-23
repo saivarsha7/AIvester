@@ -11,8 +11,13 @@ const posts = [
 const PostFeedScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      {/* Header */}
-      <Text style={styles.heading}>Community Posts</Text>
+      {/* Header with title and home icon */}
+      <View style={styles.header}>
+        <Text style={styles.heading}>Community Posts</Text>
+        <TouchableOpacity onPress={() => navigation.navigate("HomesAndActvitiesScreen")}>
+          <Ionicons name="home-outline" size={28} color="#D35400" />
+        </TouchableOpacity>
+      </View>
 
       {/* Post List */}
       <FlatList
@@ -27,7 +32,10 @@ const PostFeedScreen = ({ navigation }) => {
       />
 
       {/* Create Post Button */}
-      <TouchableOpacity style={styles.createPostButton} onPress={() => navigation.navigate("CreatePostScreen")}>
+      <TouchableOpacity
+        style={styles.createPostButton}
+        onPress={() => navigation.navigate("CreatePostScreen")}
+      >
         <Ionicons name="create-outline" size={24} color="white" />
         <Text style={styles.createPostText}>Create Post</Text>
       </TouchableOpacity>
@@ -38,17 +46,23 @@ const PostFeedScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
-    backgroundColor: "#fff",
+    paddingHorizontal: 20,
+    paddingTop: 50, // extra padding for status bar
+    backgroundColor: "#FFF4E6", // light orange
+  },
+  header: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: 20,
   },
   heading: {
     fontSize: 22,
     fontWeight: "bold",
-    marginBottom: 10,
-    textAlign: "center",
+    color: "#D35400", // deep orange for heading
   },
   postCard: {
-    backgroundColor: "#f5f5f5",
+    backgroundColor: "#FFECD1",
     padding: 15,
     borderRadius: 10,
     marginBottom: 10,
@@ -56,6 +70,7 @@ const styles = StyleSheet.create({
   postTitle: {
     fontSize: 18,
     fontWeight: "bold",
+    color: "#4B4B4B",
     marginBottom: 5,
   },
   postDescription: {
@@ -64,7 +79,7 @@ const styles = StyleSheet.create({
   },
   createPostButton: {
     flexDirection: "row",
-    backgroundColor: "orange",
+    backgroundColor: "#F7941D",
     padding: 12,
     borderRadius: 10,
     alignItems: "center",

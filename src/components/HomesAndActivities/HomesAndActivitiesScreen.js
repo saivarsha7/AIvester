@@ -5,7 +5,19 @@ import Feedback from './Feedback';
 import HomeHeader from './HomeHeader';
 import { useNavigation } from '@react-navigation/native';
 
-const NetWorthGraph = () => {
+// Try importing NetWorthGraph - update the path below if needed
+let NetWorthGraph;
+try {
+  NetWorthGraph = require('./NetWorthGraph').default;
+} catch (error) {
+  NetWorthGraph = () => (
+    <View style={styles.fallbackGraph}>
+      <Text style={styles.graphPlaceholderText}>[Graph temporarily unavailable]</Text>
+    </View>
+  );
+}
+
+const HomesAndActivitiesScreen = () => {
   const navigation = useNavigation();
   return (
     <>
@@ -81,12 +93,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: '#fffaf0', // Light yellowish-orange background
+    backgroundColor: '#fff7e6',
   },
   section: {
     marginBottom: 20,
     alignItems: 'center',
-    backgroundColor: '#fff5e6', // Light yellow-orange section background
+    backgroundColor: '#fff0cc',
     padding: 15,
     borderRadius: 10,
   },
@@ -98,16 +110,16 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#e96b00', // Yellowish-orange title color
+    color: '#FF8C00',
   },
   description: {
     fontSize: 14,
-    color: '#b57550', // Subtle brownish-orange for description
+    color: '#FF6600',
     textAlign: 'center',
     marginBottom: 10,
   },
   button: {
-    backgroundColor: '#ff8c00', // Bright yellow-orange button
+    backgroundColor: '#FF9E2C',
     padding: 10,
     borderRadius: 5,
   },
@@ -132,12 +144,21 @@ const styles = StyleSheet.create({
   netWorthText: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#e96b00', // Yellowish-orange color for net worth text
+    color: '#FF8C00',
   },
   netWorthSubtitle: {
     fontSize: 14,
-    color: '#ffbc6e', // Light yellow-orange subtitle
+    color: '#FF6600',
+  },
+  fallbackGraph: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 20,
+  },
+  graphPlaceholderText: {
+    fontStyle: 'italic',
+    color: '#aaa',
   },
 });
 
-export default NetWorthGraph;
+export default HomesAndActivitiesScreen;
