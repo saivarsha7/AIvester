@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: 20,
-    backgroundColor: '#000', // Black background
+    backgroundColor: '#FF9E2C', // Black background
   },
   profileImage: {
     width: 40,

@@ -24,7 +24,7 @@ export default MarketIndexes;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#1a1a1a",
+    backgroundColor: "#fffff",
     padding: 15,
     borderRadius: 10,
     marginTop: 20,
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
   },
   indexBox: {
     position: "absolute",
-    backgroundColor: "#333",
+    backgroundColor: "#fffff",
     padding: 10,
     borderRadius: 5,
     top: "50%",

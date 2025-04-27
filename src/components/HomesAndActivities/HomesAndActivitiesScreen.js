@@ -1,7 +1,6 @@
 import React from 'react';
 import { ScrollView, View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 import BottomNavigation from './BottomNavigation';
-import Feedback from './Feedback';
 import HomeHeader from './HomeHeader';
 import { useNavigation } from '@react-navigation/native';
 
@@ -80,8 +79,7 @@ const HomesAndActivitiesScreen = () => {
           </View>
         </TouchableOpacity>
 
-        {/* Feedback Section */}
-        <Feedback />
+       
       </ScrollView>
 
       <BottomNavigation />

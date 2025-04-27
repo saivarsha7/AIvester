@@ -21,7 +21,7 @@ export default MarketMovers;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#1e1e1e",
+    backgroundColor: "#ffffff",
     padding: 15,
     borderRadius: 8,
     marginBottom: 10,
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
   heading: {
     fontSize: 16,
     fontWeight: "bold",
-    color: "white",
+    color: "black",
     marginBottom: 8,
   },
   filterContainer: {

@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
   card: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: "#1E1E1E",
+    backgroundColor: "ffffff",
     padding: 10,
     borderRadius: 10,
     marginVertical: 5,
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   name: {
-    color: "white",
+    color: "black",
     fontSize: 16,
   },
   price: {

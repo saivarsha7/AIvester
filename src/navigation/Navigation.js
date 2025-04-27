@@ -32,7 +32,6 @@ import PortfolioTypeSelectionScreen from "../components/ComprehensiveFinancialAs
 // Homes and Activities
 import HomesAndActivitiesScreen from "../components/HomesAndActivities/HomesAndActivitiesScreen";
 import BottomNavigation from "../components/HomesAndActivities/BottomNavigation";
-import Feedback from "../components/HomesAndActivities/Feedback";
 import HomeHeader from "../components/HomesAndActivities/HomeHeader";
 import NetWorthGraph from "../components/HomesAndActivities/NetWorthGraph";
 
@@ -82,6 +81,7 @@ import IndustrySelectionScreen from "../screens/IndustrySelectionScreen";
 import PortfolioProjectionScreen from "../screens/PortfolioProjectionScreen";
 import PortfolioCompletionScreen from "../screens/PortfolioCompletionScreen";
 
+import WebViewScreen from '../screens/WebViewScreen';
 
 
 const Stack = createStackNavigator();
@@ -102,7 +102,6 @@ export default function Navigation() {
         {/* Homes and Activities */}
         <Stack.Screen name="HomesAndActivitiesScreen" component={HomesAndActivitiesScreen} />
         <Stack.Screen name="BottomNavigation" component={BottomNavigation} />
-        <Stack.Screen name="Feedback" component={Feedback} />
         <Stack.Screen name="HomeHeader" component={HomeHeader} />
         <Stack.Screen name="NetWorthGraph" component={NetWorthGraph} />
        
@@ -190,6 +189,8 @@ export default function Navigation() {
         <Stack.Screen name="StockSelectionScreen" component={StockSelectionScreen} />
         <Stack.Screen name="PortfolioProjectionScreen" component={PortfolioProjectionScreen} />
         <Stack.Screen name="PortfolioCompletionScreen" component={PortfolioCompletionScreen} />
+
+        <Stack.Screen name="WebViewScreen" component={WebViewScreen} />
 
       </Stack.Navigator>
     </NavigationContainer>

@@ -1,94 +1,3 @@
-// import React from "react";
-// import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
-
-// const MyListings = () => {
-//   return (
-//     <View style={styles.container}>
-//       {/* My Listings Section */}
-//       <Text style={styles.heading}>My Listings</Text>
-//       <View style={styles.listingsContainer}>
-//         {["US Tech", "Oil Stocks", "EU Markets", "Top Gainers"].map(
-//           (category, index) => (
-//             <TouchableOpacity key={index} style={styles.listingItem}>
-//               <Text style={styles.listingText}>{category}</Text>
-//             </TouchableOpacity>
-//           )
-//         )}
-//       </View>
-
-//       {/* Investment Overview */}
-//       <Text style={styles.heading}>Investment Overview</Text>
-//       <View style={styles.investmentContainer}>
-//         <View style={styles.investmentBox}>
-//           <Text style={styles.investmentTitle}>Financials & Assets</Text>
-//           <Text style={styles.lossText}>-0.67% last week</Text>
-//         </View>
-//         <View style={styles.investmentBox}>
-//           <Text style={styles.investmentTitle}>Technology</Text>
-//           <Text style={styles.gainText}>+4.85% this week</Text>
-//         </View>
-//       </View>
-//     </View>
-//   );
-// };
-
-// export default MyListings;
-
-// const styles = StyleSheet.create({
-//   container: {
-//     backgroundColor: "#1e1e1e",
-//     padding: 15,
-//     borderRadius: 8,
-//     marginTop: 10,
-//   },
-//   heading: {
-//     fontSize: 16,
-//     fontWeight: "bold",
-//     color: "white",
-//     marginBottom: 8,
-//   },
-//   listingsContainer: {
-//     flexDirection: "row",
-//     flexWrap: "wrap",
-//     gap: 10,
-//     marginBottom: 15,
-//   },
-//   listingItem: {
-//     backgroundColor: "#333",
-//     paddingVertical: 8,
-//     paddingHorizontal: 12,
-//     borderRadius: 5,
-//   },
-//   listingText: {
-//     color: "#fff",
-//     fontSize: 14,
-//   },
-//   investmentContainer: {
-//     flexDirection: "row",
-//     justifyContent: "space-between",
-//   },
-//   investmentBox: {
-//     backgroundColor: "#2a2a2a",
-//     padding: 12,
-//     borderRadius: 6,
-//     flex: 1,
-//     marginHorizontal: 5,
-//   },
-//   investmentTitle: {
-//     color: "#ccc",
-//     fontSize: 14,
-//   },
-//   lossText: {
-//     color: "#ff4d4d",
-//     fontSize: 13,
-//     marginTop: 5,
-//   },
-//   gainText: {
-//     color: "#4caf50",
-//     fontSize: 13,
-//     marginTop: 5,
-//   },
-// });
 import React from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
@@ -138,7 +47,7 @@ export default MyListings;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#1e1e1e",
+    backgroundColor: "#fffff",
     padding: 15,
     borderRadius: 8,
     marginTop: 10,
@@ -146,7 +55,7 @@ const styles = StyleSheet.create({
   heading: {
     fontSize: 16,
     fontWeight: "bold",
-    color: "white",
+    color: "black",
     marginBottom: 8,
   },
   listingsContainer: {

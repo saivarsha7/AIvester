@@ -11,7 +11,8 @@ export default function InvestmentSelectionScreen() {
     if (selectedOption === "robo") {
       navigation.navigate("AIHomeScreen");
     } else if (selectedOption === "portfolio") {
-      navigation.navigate("RetirementPlanningScreen");
+      navigation.navigate("WebViewScreen");
+;
     }
   };
 
@@ -62,7 +63,7 @@ export default function InvestmentSelectionScreen() {
         ]}
         onPress={() => {
           setSelectedOption("portfolio");
-          navigation.navigate("RetirementPlanningScreen");
+          navigation.navigate("WebViewScreen");
         }}
       >
         <Image
