@@ -16,7 +16,7 @@ import { Ionicons } from "@expo/vector-icons";
 let DatePicker;
 if (Platform.OS === "web") {
   DatePicker = require("react-datepicker").default;
-  require("react-datepicker/dist/react-datepicker.css");
+  // import "react-datepicker/dist/react-datepicker.css"; // Commented out due to bundling issues
 }
 
 const PersonalDetailsScreen = ({ navigation }) => {
