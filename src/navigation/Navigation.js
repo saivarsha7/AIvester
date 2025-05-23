@@ -40,7 +40,8 @@ import PortfolioAIProjectionScreen from "../components/SmartAIRoboAdvisor/Portfo
 import AIHomeScreen from "../components/SmartAIRoboAdvisor/AIHomeScreen";
 import PrecautionsScreen from "../components/SmartAIRoboAdvisor/PrecautionsScreen";
 import ChatScreen from "../components/SmartAIRoboAdvisor/ChatScreen";
-import PortfolioAllocationScreen from "../components/SmartAIRoboAdvisor/PortfolioAllocationScreen"
+import PortfolioAllocationScreen from "../components/SmartAIRoboAdvisor/PortfolioAllocationScreen";
+import GeminiChatScreen from "../components/GeminiChatbot/GeminiChatScreen"; // Added import
 
 // Other screens
 import ProfileSetupScreen from "../screens/ProfileSetupScreen";
@@ -138,6 +139,7 @@ export default function Navigation() {
         <Stack.Screen name="AIHomeScreen" component={AIHomeScreen} />
         <Stack.Screen name="PrecautionsScreen" component={PrecautionsScreen} />
         <Stack.Screen name="ChatScreen" component={ChatScreen} />
+        <Stack.Screen name="GeminiChatScreen" component={GeminiChatScreen} options={{ headerShown: false }} />
 
         {/* Profile Setup */}
         <Stack.Screen name="ProfileSetupScreen" component={ProfileSetupScreen} />

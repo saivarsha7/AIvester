@@ -9,9 +9,9 @@ const WelcomeScreen = ({ navigation }) => {
     <View style={styles.container}>
       {/* Logo */}
       <Image
-  source={require("../../../assets/logo.jpg")}  // Relative path to the assets folder
-  style={styles.logo}
-/>
+        source={require("../../../assets/logo.jpg")} // Relative path to the assets folder
+        style={styles.logo}
+      />
       {/* Heading */}
       <Text style={styles.welcomeText}>Welcome To Alvestor!</Text>
       <Text style={styles.mainHeading}>
@@ -43,6 +43,14 @@ const WelcomeScreen = ({ navigation }) => {
         onPress={() => navigation?.navigate("Onboarding")}
       >
         <Text style={styles.getStartedText}>Get Started →</Text>
+      </TouchableOpacity>
+
+      {/* Temporary button to navigate to GeminiChatScreen */}
+      <TouchableOpacity
+        style={{ ...styles.getStartedButton, backgroundColor: 'blue', marginTop: 10 }}
+        onPress={() => navigation.navigate('GeminiChatScreen')}
+      >
+        <Text style={styles.getStartedText}>Go to Gemini Chat</Text>
       </TouchableOpacity>
 
       {/* Already have an account */}
